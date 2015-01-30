@@ -11,28 +11,17 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
-Route::get('parks', function() {
-    return View::make('parks');
-});
+Route::get('game', 'HomeController@playGame');
 
-Route::post('parks', function() {
-    return 'Post to Parks!';
-});
+Route::get('portfolio', 'HomeController@showPortfolio');
 
-Route::get('say-hello/{name}', function($name) {
-    $data = array(
-        'name' => $name,
-        'age'  => 0
-    );
-    
-    return View::make('sayhello', $data);
-});
+Route::get('resume', 'HomeController@showResume');
 
-Route::get('say-hello/{name}/{age}', function($name, $age) {
-    return View::make('sayhello')->with('name', $name)->with('age', $age);
-});
+Route::get('parks', 'HomeController@showParks');
+
+Route::get('say-hello/{name?}/{age?}', 'HomeController@sayHello');
+
+
+Route::resource('posts', 'PostsController');
