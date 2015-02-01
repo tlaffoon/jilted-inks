@@ -13,8 +13,6 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
-Route::get('game', 'HomeController@playGame');
-
 Route::get('portfolio', 'HomeController@showPortfolio');
 
 Route::get('resume', 'HomeController@showResume');
@@ -22,6 +20,5 @@ Route::get('resume', 'HomeController@showResume');
 Route::get('parks', 'HomeController@showParks');
 
 Route::get('say-hello/{name?}/{age?}', 'HomeController@sayHello');
-
 
 Route::resource('posts', 'PostsController');

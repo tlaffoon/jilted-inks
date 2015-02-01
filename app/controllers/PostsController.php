@@ -20,7 +20,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return "This route will pull up the blog post create page!"
 	}
 
 
@@ -43,7 +43,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return "Show {id} will show the whole post of {id}";
 	}
 
 
@@ -55,7 +55,7 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return "Edit is totally a GET request with an $id. It's a request to load the form and any existing data. Edit is not the same as update";
 	}
 
 
