@@ -9,4 +9,6 @@
     </article>
 @endforeach
 
+{{ $posts->links() }}
+
 @stop
