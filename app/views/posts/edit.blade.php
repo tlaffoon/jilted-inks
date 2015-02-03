@@ -7,6 +7,7 @@
 {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put')) }}
     @include('posts.form')
     
+    <a href="{{{ action('PostsController@show', $post->id) }}}" class="btn btn-default">Nevermind</a>
     {{ Form::submit('Save Changes', array('class' => 'btn btn-primary')) }}
 {{ Form::close() }}
 

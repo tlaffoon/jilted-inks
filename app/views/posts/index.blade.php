@@ -8,6 +8,8 @@
     <article>
         <h2>{{{ $post->title }}}</h2>
         <p>{{{ $post->body }}}</p>
+        
+        <a href="{{{ action('PostsController@show', $post->id) }}}">Read More</a>
     </article>
 @endforeach
 
