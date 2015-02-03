@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class PostsController extends \BaseController
 {
     /**
@@ -42,8 +44,12 @@ class PostsController extends \BaseController
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        
+        try {
+            $post = Post::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            App::abort(404);
+        }
+
         return View::make('posts.show')->with('post', $post);
     }
 
@@ -55,7 +61,12 @@ class PostsController extends \BaseController
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
+        try {
+            $post = Post::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            App::abort(404);
+        }
+
         return View::make('posts.edit')->with('post', $post);
     }
 
@@ -67,7 +78,12 @@ class PostsController extends \BaseController
      */
     public function update($id)
     {
-        $post = Post::findOrFail($id);
+        try {
+            $post = Post::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            App::abort(404);
+        }
+
         return $this->savePost($post);
     }
 
@@ -85,19 +101,19 @@ class PostsController extends \BaseController
     protected function savePost($post)
     {
         $validator = Validator::make(Input::all(), Post::$rules);
-        
+
         if ($validator->fails()) {
             Session::flash('errorMessage', 'Failed to save your post!');
-            
+
             return Redirect::back()->withInput()->withErrors($validator);
         } else {
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
-            
+
             $post->save();
-            
+
             Session::flash('successMessage', 'Post saved successfully!');
-            
+
             return Redirect::action('PostsController@show', $post->id);
         }
     }
