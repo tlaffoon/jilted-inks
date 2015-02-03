@@ -32,19 +32,19 @@ class PostsController extends \BaseController {
      */
     public function store()
     {
+        $post = new Post();
+    
         $validator = Validator::make(Input::all(), Post::$rules);
         
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator);
         } else {
-            $post = new Post();
-        
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
             
             $post->save();
             
-            return Redirect::action('PostsController@index');
+            return Redirect::action('PostsController@show', $post->id);
         }
     }
 
@@ -71,7 +71,8 @@ class PostsController extends \BaseController {
      */
     public function edit($id)
     {
-        return "Edit is totally a GET request with an $id. It's a request to load the form and any existing data. Edit is not the same as update";
+        $post = Post::findOrFail($id);
+        return View::make('posts.edit')->with('post', $post);
     }
 
 
@@ -83,7 +84,21 @@ class PostsController extends \BaseController {
      */
     public function update($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        
+        $validator = Validator::make(Input::all(), Post::$rules);
+        
+        if ($validator->fails()) {
+            return Redirect::back()->withInput()->withErrors($validator);
+        } else {
+            $post->title = Input::get('title');
+            $post->body  = Input::get('body');
+            
+            $post->save();
+            
+            return Redirect::action('PostsController@show', $post->id);
+        }
+
     }
 
 
