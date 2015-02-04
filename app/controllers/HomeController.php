@@ -15,6 +15,11 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	public function showHome() {
+		$posts = Post::orderBy('updated_at', 'DESC')->paginate(10);
+		return View::make('home')->with('posts', $posts);
+	}
+
 	public function showResume($name)
 	{
 		return View::make('resume')->with('name', $name);
