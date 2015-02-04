@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="page-header"><h1>Blog Posts</h1></div>
+<h1 class="page-header">HomePage</h1>
 
 @foreach ($posts as $post)
 
@@ -28,5 +28,4 @@
     <!-- Pager -->
     {{ $posts->links() }}
 </div>
-
 @stop
