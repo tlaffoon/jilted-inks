@@ -13,4 +13,9 @@ class Post extends Eloquent
     {
         $this->attributes['title'] = ucfirst($value);
     }
+    
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
 }

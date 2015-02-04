@@ -22,3 +22,7 @@ Route::get('parks', 'HomeController@showParks');
 Route::get('say-hello/{name?}/{age?}', 'HomeController@sayHello');
 
 Route::resource('posts', 'PostsController');
+
+Route::get('login',  'HomeController@showLogin');
+Route::post('login', 'HomeController@doLogin');
+Route::get('logout', 'HomeController@doLogout');

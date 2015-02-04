@@ -16,8 +16,7 @@ class HomeController extends BaseController {
 	*/
 
 	public function showHome() {
-		$posts = Post::orderBy('updated_at', 'DESC')->paginate(10);
-		return View::make('home')->with('posts', $posts);
+		return Redirect::action('PostsController@index');
 	}
 
 	public function showResume($name)
@@ -45,5 +44,32 @@ class HomeController extends BaseController {
     	return View::make('sayhello')->with('name', $name)->with('age', $age);
 	}
 
+	public function showLogin()
+	{
+		return View::make('login');
+	}
+	
+	public function doLogin()
+	{
+		$email    = Input::get('email');
+		$password = Input::get('password');
+		
+		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+			Session::flash('successMessage', "You've logged in! Welcome to the blog!");
+			
+		    return Redirect::intended('/');
+		} else {
+			Session::flash('errorMessage', 'Failed to log in!');
+			
+		    return Redirect::action('HomeController@showLogin');
+		}
+	}
+	
+	public function doLogout()
+	{
+		Auth::logout();
+		Session::flash('successMessage', 'So long and thanks for all the fish!');
+		return Redirect::action('HomeController@showHome');
+	}
 }
 
