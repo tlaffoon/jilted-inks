@@ -47,6 +47,7 @@ class PostsController extends \BaseController
         try {
             $post = Post::findOrFail($id);
         } catch (ModelNotFoundException $e) {
+            Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
         }
 
@@ -64,6 +65,7 @@ class PostsController extends \BaseController
         try {
             $post = Post::findOrFail($id);
         } catch (ModelNotFoundException $e) {
+            Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
         }
 
@@ -81,6 +83,7 @@ class PostsController extends \BaseController
         try {
             $post = Post::findOrFail($id);
         } catch (ModelNotFoundException $e) {
+            Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
         }
 
@@ -100,9 +103,14 @@ class PostsController extends \BaseController
 
     protected function savePost($post)
     {
-        $validator = Validator::make(Input::all(), Post::$rules);
+        $input = Input::all();
 
+        $validator = Validator::make($input, Post::$rules);
+        
         if ($validator->fails()) {
+
+            Log::info("User made a bad PostsController request", $input);
+
             Session::flash('errorMessage', 'Failed to save your post!');
 
             return Redirect::back()->withInput()->withErrors($validator);
