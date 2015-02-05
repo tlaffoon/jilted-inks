@@ -1,7 +1,15 @@
 <?php
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class PostsController extends \BaseController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $this->beforeFilter('auth', array('except' => array('index', 'show')));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -9,7 +17,22 @@ class PostsController extends \BaseController
      */
     public function index()
     {
-        $posts = Post::paginate(4);
+        $query = Post::with('user');
+        
+        if (Input::has('search')) {
+            $search = '%' . Input::get('search') . '%';
+            
+            $query->where('title', 'like', $search);
+            
+            $query->orWhereHas('user', function($q) {
+                $search = '%' . Input::get('search') . '%';
+                
+                $q->where('email', 'like', $search);
+            });
+        }
+        
+        $posts = $query->orderBy('created_at', 'desc')->paginate(4);
+        
         return View::make('posts.index')->with('posts', $posts);
     }
 
@@ -31,6 +54,9 @@ class PostsController extends \BaseController
     public function store()
     {
         $post = new Post();
+        
+        $post->user_id = Auth::id();
+        
         return $this->savePost($post);
     }
 
@@ -42,16 +68,11 @@ class PostsController extends \BaseController
      */
     public function show($id)
     {
-        
         try {
-
             $post = Post::findOrFail($id);
-
-        } catch (Exception $e) {
-            
+        } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
-
         }
 
         return View::make('posts.show')->with('post', $post);
@@ -66,14 +87,10 @@ class PostsController extends \BaseController
     public function edit($id)
     {
         try {
-
             $post = Post::findOrFail($id);
-
-        } catch (Exception $e) {
-            
+        } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
-
         }
 
         return View::make('posts.edit')->with('post', $post);
@@ -88,16 +105,12 @@ class PostsController extends \BaseController
     public function update($id)
     {
         try {
-
             $post = Post::findOrFail($id);
-
-        } catch (Exception $e) {
-            
+        } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
-
         }
-        
+
         return $this->savePost($post);
     }
 
@@ -109,12 +122,22 @@ class PostsController extends \BaseController
      */
     public function destroy($id)
     {
-        //
+        try {
+            $post = Post::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            Log::warning("User made a bad PostsController request", array('id' => $id));
+            App::abort(404);
+        }
+        
+        $post->delete();
+        
+        Session::flash('successMessage', 'Post deleted!');
+        
+        return Redirect::action('PostsController@index');
     }
 
     protected function savePost($post)
     {
-
         $input = Input::all();
 
         $validator = Validator::make($input, Post::$rules);
@@ -124,16 +147,16 @@ class PostsController extends \BaseController
             Log::info("User made a bad PostsController request", $input);
 
             Session::flash('errorMessage', 'Failed to save your post!');
-            
+
             return Redirect::back()->withInput()->withErrors($validator);
         } else {
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
-            
+
             $post->save();
-            
+
             Session::flash('successMessage', 'Post saved successfully!');
-            
+
             return Redirect::action('PostsController@show', $post->id);
         }
     }

@@ -5,10 +5,12 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"fzaninotto/faker": "1.5.*@dev"
+		"laravel/framework": "4.2.*"
 	},
-	"autolad": {
+	"require-dev": {
+		"barryvdh/laravel-debugbar": "~1.8"
+	},
+	"autoload": {
 		"classmap": [
 			"app/commands",
 			"app/controllers",
