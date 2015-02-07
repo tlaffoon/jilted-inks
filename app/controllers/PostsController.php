@@ -69,7 +69,13 @@ class PostsController extends \BaseController
     public function show($id)
     {
         try {
-            $post = Post::findOrFail($id);
+
+            if (ctype_digit($id)) {
+                $post = Post::findOrFail($id);
+            } else {
+                $post = Post::where('slug', '=', $id)->firstOrFail();
+            }
+
         } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
@@ -87,7 +93,13 @@ class PostsController extends \BaseController
     public function edit($id)
     {
         try {
-            $post = Post::findOrFail($id);
+
+            if (ctype_digit($id)) {
+                $post = Post::findOrFail($id);
+            } else {
+                $post = Post::where('slug', '=', $id)->firstOrFail();
+            }
+
         } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
@@ -105,7 +117,13 @@ class PostsController extends \BaseController
     public function update($id)
     {
         try {
-            $post = Post::findOrFail($id);
+            
+            if (ctype_digit($id)) {
+                $post = Post::findOrFail($id);
+            } else {
+                $post = Post::where('slug', '=', $id)->firstOrFail();
+            }
+
         } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
@@ -123,7 +141,13 @@ class PostsController extends \BaseController
     public function destroy($id)
     {
         try {
-            $post = Post::findOrFail($id);
+            
+            if (ctype_digit($id)) {
+                $post = Post::findOrFail($id);
+            } else {
+                $post = Post::where('slug', '=', $id)->firstOrFail();
+            }
+
         } catch (ModelNotFoundException $e) {
             Log::warning("User made a bad PostsController request", array('id' => $id));
             App::abort(404);
@@ -149,15 +173,17 @@ class PostsController extends \BaseController
             Session::flash('errorMessage', 'Failed to save your post!');
 
             return Redirect::back()->withInput()->withErrors($validator);
+        
         } else {
+            
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
-
+            $post->slug  = Input::get('slug');
             $post->save();
 
             Session::flash('successMessage', 'Post saved successfully!');
 
-            return Redirect::action('PostsController@show', $post->id);
+            return Redirect::action('PostsController@show', $post->slug);
         }
     }
 }
