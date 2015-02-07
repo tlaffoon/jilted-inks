@@ -12,7 +12,7 @@
     <div class="post-body">
         <p>{{{ $post->body }}}</p>
         @if (Auth::check())
-            <a href="{{{ action('PostsController@edit', $post->id) }}}" class="pull-right">Edit Post</a>
+            <a href="{{{ action('PostsController@edit', $post->slug) }}}" class="btn btn-default pull-right">Edit Post</a>
             
             {{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'delete')) }}
                 {{ Form::submit('Delete Post', array('class' => 'btn btn-danger')) }}
