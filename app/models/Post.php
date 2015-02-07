@@ -6,7 +6,8 @@ class Post extends Eloquent
 {
     public static $rules = array(
         'title' => 'required|max:100',
-        'body'  => 'required'
+        'body'  => 'required',
+        'slug'  => 'required|alpha_dash:unique:posts'
     );
 
     public function setTitleAttribute($value)
@@ -17,5 +18,16 @@ class Post extends Eloquent
     public function user()
     {
         return $this->belongsTo('User');
+    }
+
+    public function renderBody($summary = false) {
+
+        $body = $this->body;
+
+        if ($summary) {
+            $body = str_limit($body, 20);
+        }
+
+        return $body;
     }
 }
