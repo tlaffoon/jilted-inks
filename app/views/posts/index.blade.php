@@ -15,8 +15,8 @@
         <img class="img-responsive img-bordered" src="http://placehold.it/900x200" alt="">
 
         <div class="post-body">
-            <p>{{{ $post->body }}}</p>
-            <a href="{{{ action('PostsController@show', $post->id) }}}" class="pull-right">View Post</a>
+            {{ $post->renderBody() }}
+            <a href="{{{ action('PostsController@show', $post->slug) }}}" class="btn btn-default pull-right">View Post</a>
         </div>
 
     </div>
