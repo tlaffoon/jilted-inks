@@ -4,11 +4,11 @@
 
 <div class="page-header"><h1>Create User</h1></div>
 
-{{ Form::open(array('action' => 'UsersController@store', 'files' => true)) }}
+{{ Form::open(array('action' => 'UsersController@store')) }}
     
     @include('users.partials.form')
     
-    <a href="{{{ action('UsersController@index') }}}" class="btn btn-default">Nevermind</a>
+    <a href="/" class="btn btn-default">Cancel</a>
     {{ Form::submit('Create User', array('class' => 'btn btn-primary pull-right')) }}
 {{ Form::close() }}
 
