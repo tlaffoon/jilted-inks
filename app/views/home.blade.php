@@ -24,8 +24,10 @@
     <hr>
 
 @endforeach
-<div class="text-center">
-    <!-- Pager -->
-    {{ $posts->links() }}
-</div>
+
+    <div class="text-center">
+        <!-- Pager -->
+        {{ $posts->links() }}
+    </div>
+    
 @stop

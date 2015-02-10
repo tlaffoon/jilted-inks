@@ -4,6 +4,12 @@
 
 <div class="page-header"><h1>Blog Posts</h1></div>
 
+@if(count($posts) == 0)
+
+    <h3> No posts found.  </h3>
+
+@endif
+
 @foreach ($posts as $post)
 
     <div class="blog-box img-rounded">
