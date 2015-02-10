@@ -167,8 +167,8 @@ class PostsController extends \BaseController
         $rules = array(
                 'title' => 'required|max:100',
                 'body'  => 'required',
-                'slug' => 'required|unique:posts,slug,'.$post->id
-            );
+                'slug'  => 'required|unique:posts,slug,' . $post->id
+        );
 
         $validator = Validator::make($input, $rules);
         
@@ -185,6 +185,14 @@ class PostsController extends \BaseController
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
             $post->slug  = Input::get('slug');
+
+            if (Input::hasFile('image') && Input::file('image')->isValid())
+            {
+                $post->addUploadedImage(Input::file('image'));
+                $post->save();
+                dd($post);
+            }
+
             $post->save();
 
             Session::flash('successMessage', 'Post saved successfully!');
