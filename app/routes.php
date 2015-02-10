@@ -13,15 +13,10 @@
 
 Route::get('/', 'HomeController@showHome');
 
-Route::get('portfolio', 'HomeController@showPortfolio');
-
-Route::get('resume', 'HomeController@showResume');
-
-Route::get('parks', 'HomeController@showParks');
-
-Route::get('say-hello/{name?}/{age?}', 'HomeController@sayHello');
-
 Route::resource('posts', 'PostsController');
+Route::resource('users', 'UsersController');    
+Route::resource('roles', 'RolesController');
+Route::resource('profiles', 'ProfilesController');
 
 Route::get('login',  'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');

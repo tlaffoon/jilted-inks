@@ -6,7 +6,7 @@
 
 {{ Form::open(array('action' => 'HomeController@doLogin')) }}
     <div class="form-group">
-        {{ Form::label('email', 'eMail Address') }}
+        {{ Form::label('email', 'Email Address') }}
         {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
     </div>
 

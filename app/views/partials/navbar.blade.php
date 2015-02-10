@@ -8,13 +8,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{{ action('PostsController@index') }}}">Everglades Blog</a>
+            <a class="navbar-brand" href="{{{ action('PostsController@index') }}}">Blog</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="{{{ action('HomeController@showResume') }}}">Resume</a></li>
-                <li><a href="{{{ action('HomeController@showPortfolio') }}}">Portfolio</a></li>
+            <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{{ action('HomeController@showLogin') }}}">Log In</a></li>
                 @else
@@ -26,7 +24,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search Blog..." name="search">
                     <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default">Search</button>
+                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                     </span>
                 </div>
             </form>

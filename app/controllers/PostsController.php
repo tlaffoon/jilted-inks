@@ -164,7 +164,13 @@ class PostsController extends \BaseController
     {
         $input = Input::all();
 
-        $validator = Validator::make($input, Post::$rules);
+        $rules = array(
+                'title' => 'required|max:100',
+                'body'  => 'required',
+                'slug' => 'required|unique:posts,slug,'.$post->id
+            );
+
+        $validator = Validator::make($input, $rules);
         
         if ($validator->fails()) {
 
