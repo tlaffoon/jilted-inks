@@ -20,6 +20,10 @@ body {
     padding: 10px;
 }
 
+.blog-title {
+  color: #333;
+}
+
 .img-bordered {
     border-top: solid #eee 1px;
     border-bottom: solid #eee 1px;

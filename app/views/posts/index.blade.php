@@ -15,7 +15,7 @@
     <div class="col-md-12 blog-box img-rounded">
 
         <div class="col-md-8 text-left">
-            <h3><a href="{{{ action('PostsController@show', $post->slug) }}}"> {{{ $post->title }}} </a></h3>
+            <h3><a href="{{{ action('PostsController@show', $post->slug) }}}" class="blog-title"> {{{ $post->title }}} </a></h3>
             <h5>by {{{ $post->user->username }}}</h5>  
         </div>
 
