@@ -10,6 +10,8 @@ body {
 
 .blog-box {
     margin-top: 15px;
+    border: solid #eee 1px;
+    padding: 10px;
 }
 
 .img-bordered {
@@ -42,5 +44,4 @@ body {
     position: relative;
     right: 10px;
     bottom: -5px;
-
 }
