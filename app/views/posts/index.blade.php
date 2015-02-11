@@ -27,7 +27,11 @@
         </div>
 
         <div class="col-md-12">
-            <img class="img-responsive img-bordered" src="http://placehold.it/900x200" alt="">
+            @if(!empty($post->img_path))
+                <img class="img-responsive img-bordered" src="{{{ $post->img_path }}}" alt="">
+            @else
+                <img class="img-responsive img-bordered" src="http://placehold.it/900x200" alt="">
+            @endif
         </div>
 
         <div class="col-md-12">

@@ -164,7 +164,6 @@ class PostsController extends \BaseController
             {
                 $post->addUploadedImage(Input::file('image'));
                 $post->save();
-                dd($post);
             }
 
             $post->save();
