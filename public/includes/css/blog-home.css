@@ -9,6 +9,11 @@ body {
     padding-bottom: 70px;
 }
 
+.navbar-default {
+  background-color: #fff;
+  border-color: #eee;
+}
+
 .blog-box {
     margin-top: 15px;
     border: solid #eee 1px;
@@ -39,6 +44,7 @@ body {
    height: 35px;
    width: 100%;
    background: #FFF;
+   border-top: solid #eee 1px;
 }
 
 #shield {
