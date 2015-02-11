@@ -8,6 +8,22 @@ class Post extends Eloquent
 
     protected $imgDir = 'img-upload';
 
+    public static function findPost($id){
+        if (ctype_digit($id)) {
+            $post = Post::findOrFail($id);
+            return $post;
+        } else {
+            $post = Post::where('slug', '=', $id)->firstOrFail();
+            return $post;
+        }        
+    }
+
+    public static function findBySlug() 
+    {
+        $post = self::where('slug', $slug)->first();
+        return ($post == null) ? App::abort(404) : $post;
+    }
+
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = ucfirst($value);
@@ -17,16 +33,6 @@ class Post extends Eloquent
     {
         return $this->belongsTo('User');
     }
-
-    // public function tags()
-    // {
-    //     return $this->belongsToMany('Tag', 'post_tags');
-    // }
-
-    // public function findBySlug() {
-    //     $post = self::where('slug', $slug)->first();
-    //     return ($post == null) ? App::abort(404) : $post;
-    // }
 
     public function renderBody($summary = false) {
 

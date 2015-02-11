@@ -42,7 +42,8 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$user = User::findOrFail($id);
+
+		$user = User::findUser($id);
 		return View::make('users.show', compact('user'));
 	}
 
@@ -54,7 +55,7 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$user = User::findOrFail($id);
+		$user = User::findUser($id);
 		return View::make('users.edit', compact('user'));
 	}
 
@@ -66,7 +67,8 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$user = User::findOrFail($id);
+
+		$user = User::findUser($id);
 		$this->saveUser($user);
 	}
 
@@ -79,7 +81,6 @@ class UsersController extends \BaseController {
 	public function destroy($id)
 	{
 		User::destroy($id);
-
 		return Redirect::route('users.index');
 	}
 
@@ -120,10 +121,9 @@ class UsersController extends \BaseController {
 
 	        $user->save();
 
-	        Session::flash('successMessage', 'Post saved successfully!');
+	        Session::flash('successMessage', 'User saved successfully!');
 
-	        return Redirect::action('PostsController@show', $user->id);
+	        return Redirect::action('PostsController@index');
 	    }
 	}
-
 }

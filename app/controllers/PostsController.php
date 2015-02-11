@@ -10,6 +10,7 @@ class PostsController extends \BaseController
         
         $this->beforeFilter('auth', array('except' => array('index', 'show')));
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -69,18 +70,10 @@ class PostsController extends \BaseController
     public function show($id)
     {
         try {
-
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
-
         return View::make('posts.show')->with('post', $post);
     }
 
