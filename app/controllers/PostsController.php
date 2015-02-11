@@ -86,15 +86,8 @@ class PostsController extends \BaseController
     public function edit($id)
     {
         try {
-
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
 
@@ -110,15 +103,8 @@ class PostsController extends \BaseController
     public function update($id)
     {
         try {
-            
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
 
@@ -134,19 +120,14 @@ class PostsController extends \BaseController
     public function destroy($id)
     {
         try {
-            
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
-        
-        $post->delete();
+
+        // $post->delete();
+
+        Post::destroy($post);
         
         Session::flash('successMessage', 'Post deleted!');
         

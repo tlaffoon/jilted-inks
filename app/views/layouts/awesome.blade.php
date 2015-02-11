@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,18 +63,8 @@
 
         </div>
 
-        <hr>
-
         <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12 text-right">
-                    <p>Copyright &copy; Codeup 2015</p>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </footer>
+        @include('partials.footer')
 
     </div>
     <!-- /.container -->
