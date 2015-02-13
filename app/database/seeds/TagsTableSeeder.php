@@ -1,20 +1,17 @@
 <?php
 
-// Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
 class TagsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
+        $faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Tag::create([
-
-			]);
-		}
+        for ($i=0; $i < 100; $i++) { 
+            $tag = new Tag();
+            $tag->name = $faker->word;
+            $tag->save();
+        }
 	}
-
 }

@@ -16,6 +16,11 @@
     {{ $errors->first('body', '<p class="help-block">:message</p>') }}
 </div>
 
+<div class="form-group">
+    {{ Form::label('tags', 'Tags') }}
+    {{ Form::textarea('tags', Input::old('tags'), array('class' => 'form-control', 'rows' => '4'))}}
+</div>
+
 <div class="form-group {{{ $errors->has('image') ? 'has-error' : '' }}}">
     {{ Form::label('image', 'Image') }}
     {{ Form::file('image', array('class' => 'form-group')) }}

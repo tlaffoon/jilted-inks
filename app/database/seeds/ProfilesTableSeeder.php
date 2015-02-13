@@ -7,14 +7,11 @@ class ProfilesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			Profile::create([
-
-			]);
-		}
+        for ($i=0; $i < 10; $i++) { 
+            $profile = new Profile();
+            $profile->bio = $faker->text;
+            $profile->save();
+        }
 	}
-
 }
