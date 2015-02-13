@@ -6,14 +6,23 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    margin-bottom: 70px;
 }
 
-footer {
-    margin: 50px 0;
+.navbar-default {
+  background-color: #fff;
+  border-color: #eee;
 }
 
 .blog-box {
     margin-top: 15px;
+    background-color: #fff;
+    border: solid #eee 1px;
+    padding: 10px;
+}
+
+.blog-title {
+  color: #333;
 }
 
 .img-bordered {
@@ -31,5 +40,20 @@ footer {
 
 .post-info {
     padding-left: 0px;
+}
 
+#footer {
+   position: fixed;
+   left: 0px;
+   bottom: 0px;
+   height: 35px;
+   width: 100%;
+   background: #FFF;
+   border-top: solid #eee 1px;
+}
+
+#shield {
+    position: relative;
+    right: 10px;
+    bottom: -5px;
 }

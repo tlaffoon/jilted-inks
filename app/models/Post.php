@@ -4,11 +4,25 @@ use Carbon\Carbon;
 
 class Post extends Eloquent
 {
-    public static $rules = array(
-        'title' => 'required|max:100',
-        'body'  => 'required',
-        'slug'  => 'required|alpha_dash|unique:posts'
-    );
+    protected $table = 'posts';
+
+    protected $imgDir = 'img-upload';
+
+    public static function findPost($id){
+        if (ctype_digit($id)) {
+            $post = Post::findOrFail($id);
+            return $post;
+        } else {
+            $post = Post::where('slug', '=', $id)->firstOrFail();
+            return $post;
+        }        
+    }
+
+    public static function findBySlug() 
+    {
+        $post = self::where('slug', $slug)->first();
+        return ($post == null) ? App::abort(404) : $post;
+    }
 
     public function setTitleAttribute($value)
     {
@@ -29,5 +43,12 @@ class Post extends Eloquent
         }
 
         return $body;
+    }
+
+    public function addUploadedImage($image) {
+        $systemPath = public_path() . '/' . $this->imgDir . '/';
+        $imageName = $this->id . '-' . $image->getClientOriginalName();
+        $image->move($systemPath, $imageName);
+        $this->img_path = '/' . $this->imgDir . '/' . $imageName;
     }
 }

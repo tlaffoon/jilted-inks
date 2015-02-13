@@ -4,7 +4,7 @@
 
 <div class="page-header"><h1>Update Post</h1></div>
 
-{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put')) }}
+{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'files' => true)) }}
     
     @include('posts.partials.form')
     

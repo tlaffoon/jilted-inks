@@ -4,7 +4,7 @@
 
 <div class="page-header"><h1>Create Post</h1></div>
 
-{{ Form::open(array('action' => 'PostsController@store')) }}
+{{ Form::open(array('action' => 'PostsController@store', 'files' => true)) }}
     
     @include('posts.partials.form')
     

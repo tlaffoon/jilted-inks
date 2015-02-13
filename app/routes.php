@@ -11,17 +11,17 @@
 |
 */
 
+Route::get('/findPost/{id}', function ($id) {
+    $post = Post::findPost($id);
+    dd($post);
+});
+
 Route::get('/', 'HomeController@showHome');
 
-Route::get('portfolio', 'HomeController@showPortfolio');
-
-Route::get('resume', 'HomeController@showResume');
-
-Route::get('parks', 'HomeController@showParks');
-
-Route::get('say-hello/{name?}/{age?}', 'HomeController@sayHello');
-
 Route::resource('posts', 'PostsController');
+Route::resource('profiles', 'ProfilesController');
+Route::resource('roles', 'RolesController');
+Route::resource('users', 'UsersController');    
 
 Route::get('login',  'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');

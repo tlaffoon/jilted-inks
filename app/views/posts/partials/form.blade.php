@@ -15,3 +15,14 @@
     {{ Form::textarea('body', Input::old('body'), array('class' => 'form-control', 'rows' => '4')) }}
     {{ $errors->first('body', '<p class="help-block">:message</p>') }}
 </div>
+
+<div class="form-group">
+    {{ Form::label('tags', 'Tags') }}
+    {{ Form::textarea('tags', Input::old('tags'), array('class' => 'form-control', 'rows' => '4'))}}
+</div>
+
+<div class="form-group {{{ $errors->has('image') ? 'has-error' : '' }}}">
+    {{ Form::label('image', 'Image') }}
+    {{ Form::file('image', array('class' => 'form-group')) }}
+    {{ $errors->first('image', '<span class="help-block"><p class="text-warning">:message</p></span><br>') }}
+</div>

@@ -23,6 +23,17 @@ class User extends \BaseModel implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	public static function findUser($id)
+	{
+		if (ctype_digit($id)) {
+		    $user = User::findOrFail($id);
+		} else {
+		    $user = User::where('username', '=', $id)->firstOrFail();
+		}
+
+		return $user;
+	}
+	
 	public function setPasswordAttribute($value)
 	{
 		$this->attributes['password'] = Hash::make($value);
@@ -32,4 +43,7 @@ class User extends \BaseModel implements UserInterface, RemindableInterface {
 	{
 		return $this->hasMany('Post');
 	}
+
+
+	
 }

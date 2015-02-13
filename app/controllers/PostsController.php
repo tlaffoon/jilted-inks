@@ -10,6 +10,7 @@ class PostsController extends \BaseController
         
         $this->beforeFilter('auth', array('except' => array('index', 'show')));
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -69,18 +70,10 @@ class PostsController extends \BaseController
     public function show($id)
     {
         try {
-
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
-
         return View::make('posts.show')->with('post', $post);
     }
 
@@ -93,15 +86,8 @@ class PostsController extends \BaseController
     public function edit($id)
     {
         try {
-
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
 
@@ -117,15 +103,8 @@ class PostsController extends \BaseController
     public function update($id)
     {
         try {
-            
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
 
@@ -141,19 +120,14 @@ class PostsController extends \BaseController
     public function destroy($id)
     {
         try {
-            
-            if (ctype_digit($id)) {
-                $post = Post::findOrFail($id);
-            } else {
-                $post = Post::where('slug', '=', $id)->firstOrFail();
-            }
-
-        } catch (ModelNotFoundException $e) {
-            Log::warning("User made a bad PostsController request", array('id' => $id));
+            $post = Post::findPost($id);
+        } catch (Exception $e) {
             App::abort(404);
         }
-        
-        $post->delete();
+
+        // $post->delete();
+
+        Post::destroy($post);
         
         Session::flash('successMessage', 'Post deleted!');
         
@@ -164,7 +138,13 @@ class PostsController extends \BaseController
     {
         $input = Input::all();
 
-        $validator = Validator::make($input, Post::$rules);
+        $rules = array(
+                'title' => 'required|max:100',
+                'body'  => 'required',
+                'slug'  => 'required|unique:posts,slug,' . $post->id
+        );
+
+        $validator = Validator::make($input, $rules);
         
         if ($validator->fails()) {
 
@@ -179,6 +159,13 @@ class PostsController extends \BaseController
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
             $post->slug  = Input::get('slug');
+
+            if (Input::hasFile('image') && Input::file('image')->isValid())
+            {
+                $post->addUploadedImage(Input::file('image'));
+                $post->save();
+            }
+
             $post->save();
 
             Session::flash('successMessage', 'Post saved successfully!');

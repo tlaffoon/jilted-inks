@@ -1,9 +1,9 @@
 @extends('layouts.awesome')
 
 @section('content')
-
-    <a href="/" class="pull-right">Home</a>
-    <h1 class="page-header">404 - Page Not Found</h1>
-    <img src="/includes/img/sad-dinosaur.jpg" class="img-responsive">
+    <h1 class="page-header">Page Not Found</h1>
+    <h3>Search?</h3>
+    
+    @include('partials.search-form')
 
 @stop
