@@ -16,7 +16,7 @@
     </div>
     
     <div class="form-group">
-        {{ Form::submit('Log In!', array('class' => 'btn btn-primary')) }}
+        {{ Form::submit('Log In!', array('class' => 'btn btn-primary pull-right')) }}
     </div>
 {{ Form::close() }}
 

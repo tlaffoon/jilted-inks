@@ -19,24 +19,14 @@ class HomeController extends BaseController {
 		return Redirect::action('PostsController@index');
 	}
 
-	public function showResume($name)
+	public function showResume()
 	{
-		return View::make('resume')->with('name', $name);
+		return View::make('resume');
 	}
 
 	public function showPortfolio()
 	{
 		return View::make('portfolio');
-	}
-
-	public function showParks()
-	{
-	    return View::make('parks');
-	}
-
-	public function showWelcome()
-	{
-		return Redirect::action('HomeController@sayHello', array('name' => $name));
 	}
 
 	public function sayHello($name = 'No-Name', $age = 'timeless')
@@ -55,7 +45,7 @@ class HomeController extends BaseController {
 		$password = Input::get('password');
 		
 		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
-			Session::flash('successMessage', "You've logged in! Welcome to the blog!");
+			Session::flash('successMessage', "Login successful.");
 			
 		    return Redirect::intended('/');
 		} else {
@@ -68,7 +58,7 @@ class HomeController extends BaseController {
 	public function doLogout()
 	{
 		Auth::logout();
-		Session::flash('successMessage', 'So long and thanks for all the fish!');
+		Session::flash('successMessage', 'Logout successful.');
 		return Redirect::action('HomeController@showHome');
 	}
 }
