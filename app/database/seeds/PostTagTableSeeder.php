@@ -7,14 +7,18 @@ class PostTagTableSeeder extends Seeder {
 
 	public function run()
 	{
-		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
-		{
-			PostTag::create([
+        $tags = Tag::all();
+        $posts = Post::all();
 
-			]);
-		}
+        foreach ($posts as $post) {
+            for ($i=0; $i < 10; $i++) { 
+                $post[$i]->tag
+            }
+        }
+
+
+
 	}
 
 }
