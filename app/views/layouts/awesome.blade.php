@@ -7,13 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Laravel Blog</title>
+    <title>Development Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/includes/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="/includes/css/blog-home.css" rel="stylesheet">
+
+    @yield('css')
 
     @yield('topscript')
 

@@ -17,6 +17,7 @@ Route::get('/findPost/{id}', function ($id) {
 });
 
 Route::get('/', 'HomeController@showHome');
+Route::get('/map', 'HomeController@showMap');
 
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
