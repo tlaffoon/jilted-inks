@@ -18,8 +18,14 @@
 
 <div class="form-group">
     {{ Form::label('tags', 'Tags') }}
-    {{ Form::textarea('tags', Input::old('tags'), array('class' => 'form-control', 'rows' => '4'))}}
+    {{ Form::text('tags', Input::old('tags'), array('class' => 'form-control'))}}
 </div>
+
+<!--    <div class="form-group {{ $errors->has('tag_list') ? 'has-error' : '' }}">
+          {{-- {{ Form::label('tag_list', 'Tags') }}
+          {{ Form::text('tag_list', null, array('class' => 'form-control', 'id' => 'txtTags')) }}
+          {{ $errors->first('tag_list', '<span class="help-block">:message</span>') }} --}}
+        </div> -->
 
 <div class="form-group {{{ $errors->has('image') ? 'has-error' : '' }}}">
     {{ Form::label('image', 'Image') }}

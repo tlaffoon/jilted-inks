@@ -8,12 +8,36 @@ class Post extends Eloquent
 
     protected $imgDir = 'img-upload';
 
-    public static function findPost($id){
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = ucfirst($value);
+    }
+
+    public function renderBody($summary = false) 
+    {
+        return $body = ($summary == false) ? str_limit($this->body, 300) : $this->body;
+    }
+
+    public function addUploadedImage($image) 
+    {
+        $systemPath = public_path() . '/' . $this->imgDir . '/';
+        $imageName = $this->id . '-' . $image->getClientOriginalName();
+        $image->move($systemPath, $imageName);
+        $this->img_path = '/' . $this->imgDir . '/' . $imageName;
+    }
+
+    public static function findPost($id)
+    {
         if (ctype_digit($id)) {
-            $post = Post::findOrFail($id);
+            $post = self::findOrFail($id);
             return $post;
         } else {
-            $post = Post::where('slug', '=', $id)->firstOrFail();
+            $post = self::where('slug', '=', $id)->firstOrFail();
             return $post;
         }        
     }
@@ -22,33 +46,5 @@ class Post extends Eloquent
     {
         $post = self::where('slug', $slug)->first();
         return ($post == null) ? App::abort(404) : $post;
-    }
-
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = ucfirst($value);
-    }
-    
-    public function user()
-    {
-        return $this->belongsTo('User');
-    }
-
-    public function renderBody($summary = false) {
-
-        $body = $this->body;
-
-        if ($summary) {
-            $body = str_limit($body, 20);
-        }
-
-        return $body;
-    }
-
-    public function addUploadedImage($image) {
-        $systemPath = public_path() . '/' . $this->imgDir . '/';
-        $imageName = $this->id . '-' . $image->getClientOriginalName();
-        $image->move($systemPath, $imageName);
-        $this->img_path = '/' . $this->imgDir . '/' . $imageName;
     }
 }

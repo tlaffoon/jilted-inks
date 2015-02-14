@@ -16,9 +16,5 @@ class PostTagTableSeeder extends Seeder {
                 $post[$i]->tag
             }
         }
-
-
-
 	}
-
 }
