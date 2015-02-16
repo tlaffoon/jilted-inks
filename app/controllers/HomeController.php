@@ -37,11 +37,6 @@ class HomeController extends BaseController {
 		return View::make('portfolio');
 	}
 
-	public function sayHello($name = 'No-Name', $age = 'timeless')
-	{
-    	return View::make('sayhello')->with('name', $name)->with('age', $age);
-	}
-
 	public function showLogin()
 	{
 		return View::make('login');

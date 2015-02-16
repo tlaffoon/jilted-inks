@@ -82,8 +82,6 @@ function handleNoGeolocation(errorFlag) {
 <script type="text/javascript">
     $(document).ready(function() {
         google.maps.event.addDomListener(window, 'load', initialize);
-
-        console.log()
     });
 </script>
 

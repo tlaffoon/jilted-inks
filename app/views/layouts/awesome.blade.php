@@ -26,12 +26,6 @@
     <!-- Navigation -->
     @include('partials.navbar')
 
-    <div class="container">
-        <div class="row">
-
-        </div>
-    </div>
-
     <!-- Page Content -->
     <div class="container">
 
