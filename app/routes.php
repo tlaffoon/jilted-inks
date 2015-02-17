@@ -17,6 +17,9 @@ Route::get('/findPost/{id}', function ($id) {
 });
 
 Route::get('/', 'HomeController@showHome');
+Route::get('/geolocate', 'HomeController@showGeolocate');
+Route::get('/autocomplete', 'HomeController@showAutocomplete');
+
 
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
