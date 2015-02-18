@@ -26,14 +26,16 @@
     // This example displays an address form, using the autocomplete feature
     // of the Google Places API to help users fill in the information.
 
-    var placeSearch, autocomplete;
+    var placeSearch, autocomplete, geocoder;
     var componentForm = {
       street_number: 'short_name',
       route: 'long_name',
       locality: 'long_name',
       administrative_area_level_1: 'short_name',
       country: 'long_name',
-      postal_code: 'short_name'
+      postal_code: 'short_name',
+      latitude: 'latitude',
+      longitude: 'longitude'
     };
 
     function initialize() {
@@ -70,6 +72,10 @@
           document.getElementById(addressType).value = val;
         }
       }
+
+      // Fill in lat/lng on form.
+      document.getElementById('latitude').value = place.geometry.location.lat();
+      document.getElementById('longitude').value = place.geometry.location.lng();
     }
     // [END region_fillform]
 
@@ -80,11 +86,13 @@
     function geolocate() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
+
           var geolocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           var circle = new google.maps.Circle({
             center: geolocation,
             radius: position.coords.accuracy
           });
+
           autocomplete.setBounds(circle.getBounds());
         });
       }
@@ -99,29 +107,18 @@
     
     <h2 class="page-header">Google Maps JavaScript API v3 <small>Address Autocomplete</small></h2>
 
-        <div class="col-md-6">
-            <div class="row">
-                <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform">Developer Documentation</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
+        <div class="col-md-7">
 
-        <div class="col-md-6">
-
+            {{ Form::open(array('action' => 'AddressesController@store')) }}
+            
             <div class="row">
-                {{ Form::label('autocomplete', null)}}
-                {{ Form::text('autocomplete', null, array('class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
+                {{ Form::text('autocomplete', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
             </div>
            
             <div class="row">
                 <div class="col-md-4 no-padding">
                     {{ Form::label('street_number', 'Street Number') }}
-                    {{ Form::text('street_number', null, array('class' => 'form-group form-control', 'disabled' => true)) }}
+                    {{ Form::text('street_number', null, array('id' => 'street_number', 'class' => 'form-group form-control', 'disabled' => true)) }}
                 </div>
 
                 <div class="col-md-8 no-padding">
@@ -152,6 +149,51 @@
                 {{ Form::text('country', null, array('id' => 'country', 'class' => 'form-group form-control', 'disabled' => true)) }}
             </div>
 
+            <div class="row">
+                {{ Form::label('latitude', 'Latitude') }}
+                {{ Form::text('latitude', null, array('id' => 'latitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+            </div>
+
+            <div class="row">
+                {{ Form::label('longitude', 'Longitude') }}
+                {{ Form::text('longitude', null, array('id' => 'longitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+            </div>
+
+            <div class="row">
+                {{ Form::reset('Reset', array('class' => 'btn btn-default pull-left')) }}
+                {{ Form::submit('Submit', array('class' => 'btn btn-default pull-right')) }}
+            </div>
+
+            {{ Form::close() }}
+
+        </div>
+
+        <div class="col-md-5">
+
+                <p>This is an example of an <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform">autocomplete form</a>.</p>  
+
+                <p>These fields can be auto-populated, with their results biased upon page load by geolocating the user's IP address.</p>
+
+                <p>After receiving a valid address, you can geocode that address to get a latitude and longitude.  These values can also be stored in the database.</p>
+
+                <hr>
+
+                <p>This page uses the vanilla javascript syntax found in google's <a href="https://developers.google.com/maps/documentation/javascript/examples/">documentation</a>.</p>  
+
+                <p>A couple of modifications allow us to pull the latitude/longitude along with our other desired fields.</p>
+
+                <hr>
+
+                <p>There are other, easier ways to configure autocomplete fields such as this  <a href="https://github.com/ubilabs/geocomplete">jQuery plugin</a> from <a href="http://www.ubilabs.net/en">Ubilabs</a>.</p>
+
+                <p>The next thing you can do once you capture an address is <a href="https://developers.google.com/maps/documentation/javascript/geocoding#Geocoding"> geocode</a> it to plot markers.</p>
+                
+        </div>
+
+        <div class="col-md-12 text-right">
+
+            <a href="/geocode" class="btn btn-default"><i class="fa fa-arrow-right"></i></a>
+
         </div>
 
 @stop
@@ -163,6 +205,7 @@
         // Autocomplete        
         initialize();
         $('#autocomplete').focus(geolocate);
+        // $('#autocomplete').change(codeAddress);
 
     });
 </script>

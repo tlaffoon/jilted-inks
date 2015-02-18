@@ -18,9 +18,19 @@ Route::get('/findPost/{id}', function ($id) {
 
 Route::get('/', 'HomeController@showHome');
 Route::get('/geolocate', 'HomeController@showGeolocate');
-Route::get('/autocomplete', 'HomeController@showAutocomplete');
+Route::get('/gmaps', 'HomeController@showGmaps');
+
+Route::get('/autocomplete', function() {
+    return View::make('maps.autocomplete');
+});
+Route::post('/autocomplete', 'HomeController@storeAddress');
+
+Route::get('/geocode', function() {
+    return View::make('maps.geocode');
+});
 
 
+Route::resource('addresses', 'AddressesController');
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
 Route::resource('roles', 'RolesController');

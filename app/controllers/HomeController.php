@@ -19,14 +19,6 @@ class HomeController extends BaseController {
 		return Redirect::action('PostsController@index');
 	}
 
-	public function showGeolocate() {
-		return View::make('geolocate');
-	}
-
-	public function showAutocomplete() {
-		return View::make('autocomplete');
-	}
-
 	public function showResume()
 	{
 		return View::make('resume');
