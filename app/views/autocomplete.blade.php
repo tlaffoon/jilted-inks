@@ -34,6 +34,7 @@
       administrative_area_level_1: 'short_name',
       country: 'long_name',
       postal_code: 'short_name'
+
     };
 
     function initialize() {
@@ -80,6 +81,14 @@
     function geolocate() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
+          
+          // Update form with lat/lng
+          document.getElementById('latitude').value = position.coords.latitude;
+          document.getElementById('latitude').disabled = false;
+          
+          document.getElementById('longitude').value = position.coords.longitude;
+          document.getElementById('longitude').disabled = false;
+
           var geolocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           var circle = new google.maps.Circle({
             center: geolocation,
@@ -99,23 +108,12 @@
     
     <h2 class="page-header">Google Maps JavaScript API v3 <small>Address Autocomplete</small></h2>
 
-        <div class="col-md-6">
-            <div class="row">
-                <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform">Developer Documentation</a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </div>
+        <div class="col-md-7">
 
-        <div class="col-md-6">
-
+            {{ Form::open(array('action' => 'HomeController@storeAddress')) }}
+            
             <div class="row">
-                {{ Form::label('autocomplete', null)}}
-                {{ Form::text('autocomplete', null, array('class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
+                {{ Form::text('autocomplete', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
             </div>
            
             <div class="row">
@@ -151,6 +149,43 @@
                 {{ Form::label('country', 'Country') }}
                 {{ Form::text('country', null, array('id' => 'country', 'class' => 'form-group form-control', 'disabled' => true)) }}
             </div>
+
+            <div class="row">
+                {{ Form::label('latitude', 'Latitude') }}
+                {{ Form::text('latitude', null, array('id' => 'latitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+            </div>
+
+            <div class="row">
+                {{ Form::label('longitude', 'Longitude') }}
+                {{ Form::text('longitude', null, array('id' => 'longitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+            </div>
+
+            <div class="row">
+                {{ Form::submit('Submit', array('class' => 'btn btn-default pull-right')) }}
+            </div>
+
+            {{ Form::close() }}
+
+        </div>
+
+        <div class="col-md-5">
+
+
+                <p>This is an example of an autocomplete form.  These field can be auto-populated, even hidden, from the user.</p>
+
+                <p>After receiving a valid address, you can geocode that address to get a latitude and longitude.  These values can also be stored in the database.</p>
+
+                <p>This page uses the vanilla javascript syntax found in google's <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform">documentation</a>.</p>
+
+                <p>There are other, easier ways to configure autocomplete fields such as this jQuery <a href="https://github.com/ubilabs/geocomplete"> plugin</a>.</p>
+
+                <p>The next thing you can do once you capture an address is <a href="https://developers.google.com/maps/documentation/javascript/geocoding#Geocoding"> geocode</a> it.</p>
+                
+        </div>
+
+        <div class="col-md-12 text-right">
+
+            <a href="/geocode" class="btn btn-default"><i class="fa fa-arrow-right"></i></a>
 
         </div>
 
