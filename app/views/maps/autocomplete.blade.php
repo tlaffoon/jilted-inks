@@ -170,7 +170,6 @@
 
         <div class="col-md-5">
 
-
                 <p>This is an example of an autocomplete form.</p>  
 
                 <p>These fields can be auto-populated, even hidden, from the user.</p>
