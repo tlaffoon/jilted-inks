@@ -36,4 +36,9 @@ class Address extends \Eloquent {
                           ) d WHERE distance <= $radius");
     }
 
+    // CONTROLLER
+    // $items = Model::distance($lat, $lng, $radius, "mi")
+    //           ->orderBy("distance")
+    //           ->get();
+
 }
