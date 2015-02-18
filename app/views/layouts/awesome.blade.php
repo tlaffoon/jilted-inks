@@ -15,7 +15,16 @@
     <!-- Custom CSS -->
     <link href="/includes/css/blog-home.css" rel="stylesheet">
 
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     @yield('css')
+
+    <!-- jQuery -->
+    <script src="/includes/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/includes/js/bootstrap.min.js"></script>
 
     @yield('topscript')
 
@@ -64,12 +73,6 @@
 
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="/includes/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/includes/js/bootstrap.min.js"></script>
 
     @yield('bottomscript')
 
