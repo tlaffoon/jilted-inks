@@ -73,19 +73,16 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-
-        // Autocomplete
-        $("#autocomplete").geocomplete();
-
-        // Trigger geocoding request.
-        $("#btn-geocode").click(function(event){
-            event.preventDefault();
-          $("#autocomplete").trigger("geocode");
-          // Autocomplete w/Map Option       
-          $("#autocomplete").geocomplete({
-            map: "#map-canvas"
-          });
+        // Autocomplete w/Map Option       
+        $("#autocomplete").geocomplete({
+          map: "#map-canvas"
         });
+
+        // // Trigger geocoding request.
+        // $("#btn-geocode").click(function(event){
+        //     event.preventDefault();
+        //   $("autocomplete").trigger("geocode");
+        // });
 
     });
 </script>

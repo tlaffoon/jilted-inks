@@ -30,6 +30,7 @@ Route::post('/geocode', function() {
     // do nothing.
 });
 
+Route::resource('addresses', 'AddressesController');
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
 Route::resource('roles', 'RolesController');

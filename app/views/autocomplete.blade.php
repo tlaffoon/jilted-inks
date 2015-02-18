@@ -110,7 +110,7 @@
 
         <div class="col-md-7">
 
-            {{ Form::open(array('action' => 'HomeController@storeAddress')) }}
+            {{ Form::open(array('action' => 'AddressesController@store')) }}
             
             <div class="row">
                 {{ Form::text('autocomplete', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
