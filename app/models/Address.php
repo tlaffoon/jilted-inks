@@ -8,6 +8,6 @@ class Address extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = ['street_number', 'street_name', 'city', 'state', 'zip', 'country', 'latitude', 'longitude'];
 
 }

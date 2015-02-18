@@ -39,8 +39,8 @@ class AddressesController extends \BaseController {
 		}
 
 		Address::create($data);
-
-		return Redirect::route('addresses.index');
+		Session::flash('successMessage', 'Address Added.');
+		return Redirect::back();
 	}
 
 	/**

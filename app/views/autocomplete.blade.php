@@ -26,15 +26,16 @@
     // This example displays an address form, using the autocomplete feature
     // of the Google Places API to help users fill in the information.
 
-    var placeSearch, autocomplete;
+    var placeSearch, autocomplete, geocoder;
     var componentForm = {
       street_number: 'short_name',
       route: 'long_name',
       locality: 'long_name',
       administrative_area_level_1: 'short_name',
       country: 'long_name',
-      postal_code: 'short_name'
-
+      postal_code: 'short_name',
+      latitude: 'latitude',
+      longitude: 'longitude'
     };
 
     function initialize() {
@@ -71,6 +72,9 @@
           document.getElementById(addressType).value = val;
         }
       }
+
+      document.getElementById('latitude').value = place.geometry.location.lat();
+      document.getElementById('longitude').value = place.geometry.location.lng();
     }
     // [END region_fillform]
 
@@ -81,23 +85,37 @@
     function geolocate() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-          
-          // Update form with lat/lng
-          document.getElementById('latitude').value = position.coords.latitude;
-          document.getElementById('latitude').disabled = false;
-          
-          document.getElementById('longitude').value = position.coords.longitude;
-          document.getElementById('longitude').disabled = false;
 
           var geolocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
           var circle = new google.maps.Circle({
             center: geolocation,
             radius: position.coords.accuracy
           });
+
           autocomplete.setBounds(circle.getBounds());
         });
       }
     }
+
+    // function codeAddress() {
+    //     var geocoder = new google.maps.Geocoder();
+
+    //     var address = document.getElementById('autocomplete').value;
+    //     geocoder.geocode( { 'address': address}, function(results, status) {
+    //         if (status == google.maps.GeocoderStatus.OK) {
+
+    //             // Update form with lat/lng
+    //             document.getElementById('latitude').value = results[0].geometry.location.lat();
+    //             document.getElementById('latitude').disabled = false;
+                
+    //             document.getElementById('longitude').value = results[0].geometry.location.lng();
+    //             document.getElementById('longitude').disabled = false;
+
+    //         } else {
+    //           alert('Geocode was not successful for the following reason: ' + status);
+    //         }
+    //     });
+    // }
     // [END region_geolocation]
 
     // End Autocomplete Block
@@ -119,7 +137,7 @@
             <div class="row">
                 <div class="col-md-4 no-padding">
                     {{ Form::label('street_number', 'Street Number') }}
-                    {{ Form::text('street_number', null, array('class' => 'form-group form-control', 'disabled' => true)) }}
+                    {{ Form::text('street_number', null, array('id' => 'street_number', 'class' => 'form-group form-control', 'disabled' => true)) }}
                 </div>
 
                 <div class="col-md-8 no-padding">
@@ -161,6 +179,7 @@
             </div>
 
             <div class="row">
+                {{ Form::reset('Reset', array('class' => 'btn btn-default pull-left')) }}
                 {{ Form::submit('Submit', array('class' => 'btn btn-default pull-right')) }}
             </div>
 
@@ -198,6 +217,7 @@
         // Autocomplete        
         initialize();
         $('#autocomplete').focus(geolocate);
+        // $('#autocomplete').change(codeAddress);
 
     });
 </script>
