@@ -1,4 +1,4 @@
-# Everglades Blog
+# Development Blog
 
-This is the example blog for the Everglades cohort.
+Development Blog is under development.
 
