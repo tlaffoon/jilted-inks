@@ -14,7 +14,7 @@
     }
 
     #autocomplete {
-        width: 90%;
+        width: 100%;
     }
 
 </style>
@@ -37,18 +37,14 @@
         </div>
     </div>
 
-    <div class="col-md-12   ">
+    <div class="col-md-12">
 
         {{ Form::open(array('url' => '/geocode', 'class' => 'form-inline')) }}
         
         <div class="row">
             {{ Form::text('autocomplete', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
-            {{ Form::submit('Submit', array('id' => 'btn-geocode', 'class' => 'btn btn-default pull-right')) }}
         </div>
-
-        <div class="row">
-        </div>
-
+        
         {{ Form::close() }}
 
     </div>
@@ -56,14 +52,19 @@
     <div class="col-md-12 form-group">
         <div class="row">
             <div id="map-canvas"></div>
-        </div>  
+        </div>
     </div>
 
-
-    <div class="col-md-12 text-right">
-
+    <div class="col-md-12 form-group">
         <div class="row">
-            <a href="/geocode" class="btn btn-default"><i class="fa fa-arrow-right"></i></a>
+            <p> The next step would be allowing markers to be plotted from multiple address inputs. </p>        
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="row">
+            <a href="/autocomplete" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
+            <a href="/markers" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 
@@ -77,12 +78,6 @@
         $("#autocomplete").geocomplete({
           map: "#map-canvas"
         });
-
-        // // Trigger geocoding request.
-        // $("#btn-geocode").click(function(event){
-        //     event.preventDefault();
-        //   $("autocomplete").trigger("geocode");
-        // });
 
     });
 </script>

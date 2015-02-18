@@ -20,15 +20,15 @@ Route::get('/', 'HomeController@showHome');
 Route::get('/geolocate', 'HomeController@showGeolocate');
 Route::get('/gmaps', 'HomeController@showGmaps');
 
-Route::get('/autocomplete', 'HomeController@showAutocomplete');
+Route::get('/autocomplete', function() {
+    return View::make('maps.autocomplete');
+});
 Route::post('/autocomplete', 'HomeController@storeAddress');
 
 Route::get('/geocode', function() {
-    return View::make('geocode');
+    return View::make('maps.geocode');
 });
-Route::post('/geocode', function() {
-    // do nothing.
-});
+
 
 Route::resource('addresses', 'AddressesController');
 Route::resource('posts', 'PostsController');

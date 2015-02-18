@@ -19,23 +19,6 @@ class HomeController extends BaseController {
 		return Redirect::action('PostsController@index');
 	}
 
-	public function storeAddress() {
-		// This function does nothing.
-		dd(Input::all());
-	}
-
-	public function showGeolocate() {
-		return View::make('geolocate');
-	}
-
-	public function showAutocomplete() {
-		return View::make('autocomplete');
-	}
-
-	public function showGmaps() {
-		return View::make('gmaps');
-	}
-
 	public function showResume()
 	{
 		return View::make('resume');
