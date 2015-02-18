@@ -170,18 +170,21 @@
 
         <div class="col-md-5">
 
+                <p>This is an example of an <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform">autocomplete form</a>.</p>  
 
-                <p>This is an example of an autocomplete form.</p>  
-
-                <p>These fields can be auto-populated, even hidden, from the user.</p>
+                <p>These fields can be auto-populated, with their results biased upon page load by geolocating the user's IP address.</p>
 
                 <p>After receiving a valid address, you can geocode that address to get a latitude and longitude.  These values can also be stored in the database.</p>
 
-                <p>This page uses the vanilla javascript syntax found in google's <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform">documentation</a>.</p>  
+                <hr>
+
+                <p>This page uses the vanilla javascript syntax found in google's <a href="https://developers.google.com/maps/documentation/javascript/examples/">documentation</a>.</p>  
 
                 <p>A couple of modifications allow us to pull the latitude/longitude along with our other desired fields.</p>
 
-                <p>There are other, easier ways to configure autocomplete fields such as this jQuery <a href="https://github.com/ubilabs/geocomplete"> plugin</a>.</p>
+                <hr>
+
+                <p>There are other, easier ways to configure autocomplete fields such as this  <a href="https://github.com/ubilabs/geocomplete">jQuery plugin</a> from <a href="http://www.ubilabs.net/en">Ubilabs</a>.</p>
 
                 <p>The next thing you can do once you capture an address is <a href="https://developers.google.com/maps/documentation/javascript/geocoding#Geocoding"> geocode</a> it to plot markers.</p>
                 

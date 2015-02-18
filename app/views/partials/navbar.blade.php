@@ -20,6 +20,7 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/resume">Resume</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/autocomplete">GMaps Demo</a></li>
             </ul>
 
             <!-- Navbar Search Form -->
@@ -38,6 +39,7 @@
                     <li><a href="{{{ action('HomeController@showLogin') }}}">Log In</a></li>
                 @else
                     <li><a href="{{{ action('PostsController@create') }}}">Create Post</a></li>
+                    <li><a href="{{{ action('PostsController@index') }}}">Manage Posts</a></li>
                     <li><a href="{{{ action('HomeController@doLogout') }}}">Log Out</a></li>
                 @endif
             </ul>
