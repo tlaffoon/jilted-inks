@@ -4,11 +4,19 @@ class Address extends \Eloquent {
 
     // Add your validation rules here
     public static $rules = [
-        // 'title' => 'required'
+        'address' => 'required', 
+        'street_number' => 'required', 
+        'street_name' => 'required', 
+        'city' => 'required', 
+        'state' => 'required', 
+        'zip' => 'required', 
+        'country' => 'required', 
+        'latitude' => 'required', 
+        'longitude' => 'required'
     ];
 
     // Don't forget to fill this array
-    protected $fillable = ['street_number', 'street_name', 'city', 'state', 'zip', 'country', 'latitude', 'longitude'];
+    protected $fillable = ['address', 'street_number', 'street_name', 'city', 'state', 'zip', 'country', 'latitude', 'longitude'];
 
     // Distance raw query
     public function scopeDistance($query, $lat, $lng, $radius, $unit = "mi")

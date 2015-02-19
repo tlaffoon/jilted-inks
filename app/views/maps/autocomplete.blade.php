@@ -112,8 +112,8 @@
             {{ Form::open(array('action' => 'AddressesController@store')) }}
             
             <div class="row">
-                {{ Form::label('autocomplete', 'Address') }}
-                {{ Form::text('autocomplete', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
+                {{ Form::label('address', 'Address') }}
+                {{ Form::text('address', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
             </div>
            
             <div class="row">
