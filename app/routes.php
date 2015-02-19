@@ -17,6 +17,10 @@ Route::get('/findPost/{id}', function ($id) {
 });
 
 Route::get('/', 'HomeController@showHome');
+Route::get('/maps', function() {
+    return View::make('maps.index');
+});
+
 Route::get('/geolocate', 'HomeController@showGeolocate');
 Route::get('/gmaps', 'HomeController@showGmaps');
 
@@ -31,6 +35,10 @@ Route::get('/geocode', function() {
 
 Route::get('/markers', function() {
     return View::make('maps.markers');
+});
+
+Route::get('search', function() {
+    return View::make('maps.search');
 });
 
 Route::get('testJSON', function() {
