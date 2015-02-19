@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('login',  'HomeController@showLogin');
+Route::post('login', 'HomeController@doLogin');
+Route::get('logout', 'HomeController@doLogout');
+
 Route::get('/findPost/{id}', function ($id) {
     $post = Post::findPost($id);
     dd($post);
@@ -37,13 +41,17 @@ Route::get('/markers', function() {
     return View::make('maps.markers');
 });
 
-Route::get('search', function() {
-    return View::make('maps.search');
+Route::get('/ajax', function () {
+    return View::make('maps.ajax');
 });
 
-Route::get('testJSON', function() {
+Route::post('/ajax', function() {
     $addresses = Address::all();
     return Response::json($addresses);
+});
+
+Route::get('search', function() {
+    return View::make('maps.search');
 });
 
 
@@ -52,7 +60,3 @@ Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
 Route::resource('roles', 'RolesController');
 Route::resource('users', 'UsersController');    
-
-Route::get('login',  'HomeController@showLogin');
-Route::post('login', 'HomeController@doLogin');
-Route::get('logout', 'HomeController@doLogout');
