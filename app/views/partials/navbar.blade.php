@@ -20,7 +20,7 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/resume">Resume</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/autocomplete">GMaps Demo</a></li>
+                <li><a href="/maps">GMaps Demo</a></li>
             </ul>
 
             <!-- Navbar Search Form -->
