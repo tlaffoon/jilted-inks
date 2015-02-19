@@ -29,6 +29,15 @@ Route::get('/geocode', function() {
     return View::make('maps.geocode');
 });
 
+Route::get('/markers', function() {
+    return View::make('maps.markers');
+});
+
+Route::get('testJSON', function() {
+    $addresses = Address::all();
+    return Response::json($addresses);
+});
+
 
 Route::resource('addresses', 'AddressesController');
 Route::resource('posts', 'PostsController');
