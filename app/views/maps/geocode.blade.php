@@ -83,7 +83,7 @@
             <p>  You can grab the address from an input, and then create a geocoder object.  </p>
             <p>  From there, you can geocode the address into a latLng object. </p>
             <p>  This latLngObj can be added to an array of markers to be plotted on a map. </p>  
-            <p>  The next step is to actually plot markers from multiple address inputs. </p>
+            <p>  The next step is to plot markers from multiple address inputs. </p>
         </div>
     </div>
 

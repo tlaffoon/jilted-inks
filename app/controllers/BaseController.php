@@ -1,6 +1,7 @@
 <?php
 
 class BaseController extends Controller {
+	
 	public function __construct()
 	{
 		// require csrf token for all post, delete, and put actions
