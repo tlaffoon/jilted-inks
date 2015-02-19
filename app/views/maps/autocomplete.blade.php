@@ -112,6 +112,7 @@
             {{ Form::open(array('action' => 'AddressesController@store')) }}
             
             <div class="row">
+                {{ Form::label('autocomplete', 'Address') }}
                 {{ Form::text('autocomplete', null, array('id' => 'autocomplete', 'class' => 'form-group form-control', 'placeholder' => 'Enter your address...')) }}
             </div>
            
@@ -128,21 +129,24 @@
             </div>
 
             <div class="row">
-                {{ Form::label('city', 'City') }}
-                {{ Form::text('city', null, array('id' => 'locality', 'class' => 'form-group form-control', 'disabled' => true)) }}
-            </div>
 
-            <div class="row">
-                <div class="col-md-4 no-padding">
+                <div class="col-md-7 no-padding">
+                    {{ Form::label('city', 'City') }}
+                    {{ Form::text('city', null, array('id' => 'locality', 'class' => 'form-group form-control', 'disabled' => true)) }}
+                </div>
+              
+                <div class="col-md-2 no-padding">
                     {{ Form::label('state', 'State') }}
                     {{ Form::text('state', null, array('id' => 'administrative_area_level_1', 'class' => 'form-group form-control', 'disabled' => true)) }}
                 </div>
 
-                <div class="col-md-8 no-padding">
+                <div class="col-md-3 no-padding">
                     {{ Form::label('zip', 'Zip') }}
                     {{ Form::text('zip', null, array('id' => 'postal_code', 'class' => 'form-group form-control', 'disabled' => true)) }}
                 </div>
             </div>
+
+
 
             <div class="row">
                 {{ Form::label('country', 'Country') }}
@@ -150,17 +154,19 @@
             </div>
 
             <div class="row">
-                {{ Form::label('latitude', 'Latitude') }}
-                {{ Form::text('latitude', null, array('id' => 'latitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+                <div class="col-md-6 no-padding">
+                    {{ Form::label('latitude', 'Latitude') }}
+                    {{ Form::text('latitude', null, array('id' => 'latitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+                </div>
+
+                <div class="col-md-6 no-padding">
+                    {{ Form::label('longitude', 'Longitude') }}
+                    {{ Form::text('longitude', null, array('id' => 'longitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
+                </div>
             </div>
 
             <div class="row">
-                {{ Form::label('longitude', 'Longitude') }}
-                {{ Form::text('longitude', null, array('id' => 'longitude', 'class' => 'form-group form-control', 'disabled' => true)) }}
-            </div>
-
-            <div class="row">
-                {{ Form::reset('Reset', array('class' => 'btn btn-default pull-left')) }}
+                {{ Form::reset('Reset', array('id' => 'btn-reset', 'class' => 'btn btn-default pull-left')) }}
                 {{ Form::submit('Submit', array('class' => 'btn btn-default pull-right')) }}
             </div>
 
@@ -202,10 +208,18 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        // Autocomplete        
+        // Initialize Autocomplete Object / Input Field
         initialize();
+
+        // On focus, bias results for autolocate by geolocating IP address
         $('#autocomplete').focus(geolocate);
-        // $('#autocomplete').change(codeAddress);
+
+        // Disable inputs on reset button click
+        $('#btn-reset').click(function() {
+            for (var component in componentForm) {
+              document.getElementById(component).disabled = true;
+            }
+        });
 
     });
 </script>

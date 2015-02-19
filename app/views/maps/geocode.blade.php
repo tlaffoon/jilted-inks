@@ -51,13 +51,39 @@
 
     <div class="col-md-12 form-group">
         <div class="row">
-            <div id="map-canvas"></div>
+            <div id="map-canvas" class="img-rounded"></div>
         </div>
     </div>
 
     <div class="col-md-12 form-group">
         <div class="row">
-            <p> The next step would be allowing markers to be plotted from multiple address inputs. </p>        
+
+            <p><a href="https://developers.google.com/maps/documentation/geocoding/">Google Developer Documentation on Geocoding</a></p>
+
+
+<pre>
+    // Get address value from input
+    var address = $('#autocomplete').val();
+
+    // Redeclare geocoder variable
+    var geocoder = new google.maps.Geocoder();
+
+    // Geocode address
+    geocoder.geocode({ 'address': address }, function(result, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            
+            var latLngObj = result[0]["geometry"]["location"];
+            console.log(latLngObj);
+
+            // add marker to array
+            addMarker(latLngObj);
+        }
+    });
+</pre>      
+            <p>  You can grab the address from an input, and then create a geocoder object.  </p>
+            <p>  From there, you can geocode the address into a latLng object. </p>
+            <p>  This latLngObj can be added to an array of markers to be plotted on a map. </p>  
+            <p>  The next step is to plot markers from multiple address inputs. </p>
         </div>
     </div>
 
