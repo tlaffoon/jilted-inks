@@ -21,7 +21,6 @@ class Address extends \Eloquent {
     // Distance raw query
     public function scopeDistance($query, $lat, $lng, $radius, $unit = "mi")
     {
-
         $unit = ($unit === "mi") ? 3963.17 : 6378.10;
         $lat = (float) $lat;
         $lng = (float) $lng;
