@@ -37,7 +37,9 @@
             <!-- Login/Logout -->
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li><a href="{{{ action('HomeController@showLogin') }}}">Log In</a></li>
+                    <li>
+                        <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#loginModal">Log In</button>
+                    </li>
                 @else
                     <li><a href="{{{ action('PostsController@create') }}}">Create Post</a></li>
                     <li><a href="{{{ action('PostsController@index') }}}">Manage Posts</a></li>
