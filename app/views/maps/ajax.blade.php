@@ -151,7 +151,10 @@
 
     <div class="col-md-12">
         <div class="row">
-           
+           <p>The autocomplete form above allows you to add an address to the database.</p>
+           <p>When you send the ajax request, it communicates with a controller method which returns a list of addresses in JSON form.</p>
+           <p>This list of json objects is looped through, geocoded, and used to add map markers into the markers array.</p>
+           <p>Each time a new marker is added, the bounds of the map are redefined.</p>
         </div>
     </div>
 
@@ -223,6 +226,5 @@
             });    
         });
     });
-
 </script>
 @stop
