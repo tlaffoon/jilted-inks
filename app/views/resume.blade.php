@@ -111,7 +111,7 @@
 
             <div class="col-md-2">
                 <a href="" target="_blank"></a>
-                <img src="/includes/img/linux.png" class="img img-responsive img-rounded">
+                <img src="/includes/img/linux2.gif" class="img img-responsive img-rounded">
             </div>
 
             <div class="col-md-2">
