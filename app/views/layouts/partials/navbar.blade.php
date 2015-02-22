@@ -18,7 +18,6 @@
             
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/posts">Posts</a></li>
-                <li><a href="/about">About</a></li>
                 <li><a href="/resume">Resume</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
                 <li><a href="/maps">GMaps Demo</a></li>

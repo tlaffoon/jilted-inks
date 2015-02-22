@@ -5,6 +5,13 @@
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
+
+        @if(Auth::check())
+
+            <h3>You are already logged in.</h3>
+            
+        @else
+
         <h1 class="page-header">Please Sign In</h1>
 
         {{ Form::open(array('action' => 'HomeController@doLogin')) }}
@@ -22,6 +29,8 @@
                 {{ Form::submit('Sign In!', array('class' => 'btn btn-primary pull-right')) }}
             </div>
         {{ Form::close() }}
+
+        @endif
 
     </div>
 </div>
