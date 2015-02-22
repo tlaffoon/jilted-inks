@@ -187,11 +187,32 @@
     <div class="row box img-rounded">
         <div class="col-md-12">
             <h3 class="page-header">Education</h3>
-            <p class="text-muted pull-right">December 2008</p>
         </div>
 
         <div class="col-md-10"> 
-            <p>Bachelor Of Arts in Psychology/Anthropology</p>
+            <p class="text-muted pull-right">December 2008</p>
+            <h4>Bachelor Of Arts in Psychology/Anthropology</h4>
+
+            <p class="description">
+                <em>
+                    Mastered communication skills and studied the ability to collect,
+                organize, analyze and interpret data with an evolved understanding of human 
+                behavior.
+                </em>
+            </p>
+            <p class="description">
+                <em>
+                    Anthropology is the scientific and humanistic study of humankind. 
+                    It provides a fuller understanding of both other cultures and our own. 
+                </em>
+            </p>
+
+            <p class="description">
+                Both of these fields of study have helped me greatly in performing 
+                duties related to the classroom.  I have a talent for anticipating 
+                students' needs, accommodating different learning styles, and 
+                improvising where necessary to maximize the overall bootcamp experience.
+            </p>
         </div>
 
         <div class="col-md-2">
