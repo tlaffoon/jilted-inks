@@ -50,6 +50,10 @@ Route::post('/ajax', function() {
     return Response::json($addresses);
 });
 
+Route::get('resume', function() {
+    return View::make('resume');
+});
+
 Route::get('search', function() {
     return View::make('maps.search');
 });

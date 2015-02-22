@@ -33,7 +33,7 @@
 <body>
 
     <!-- Navigation -->
-    @include('partials.navbar')
+    @include('layouts.partials.navbar')
 
     <!-- Page Content -->
     <div class="container">
@@ -64,12 +64,16 @@
                 @endif
             
                 @yield('content')
+
             </div>
 
         </div>
 
+        <!-- Include login modal -->
+        @include('layouts.partials.login')
+
         <!-- Footer -->
-        @include('partials.footer')
+        @include('layouts.partials.footer')
 
     </div>
     <!-- /.container -->
