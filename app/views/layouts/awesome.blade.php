@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Development Blog</title>
+    <title>Considerate Coder</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/includes/css/bootstrap.min.css" rel="stylesheet">
