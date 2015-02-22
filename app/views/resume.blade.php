@@ -35,7 +35,7 @@
         </div>
 
         <div class="col-md-9 img-rounded dash-border">
-            <h4>Biographical Information</h4>
+            <h4>Introduction</h4>
             <p class="description"> My name is Thomas J. Laffoon - and I work in a startup here in downtown San Antonio 
                 called <a href="http://codeup.com/"><strong>Codeup</strong></a>.  We teach people how to build websites and web applications using 
                 some of the most common technologies out there.
@@ -206,18 +206,44 @@
                     It provides a fuller understanding of both other cultures and our own. 
                 </em>
             </p>
-
-            <p class="description">
-                Both of these fields of study have helped me greatly in performing 
-                duties related to the classroom.  I have a talent for anticipating 
-                students' needs, accommodating different learning styles, and 
-                improvising where necessary to maximize the overall bootcamp experience.
-            </p>
         </div>
 
         <div class="col-md-2">
             <img src="/includes/img/utsa.jpg" class="img-responsive img-rounded">
         </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="row box img-rounded">
+        <div class="col-md-12">
+            <h3 class="page-header">
+                Biographical Information <i class="fa fa-heart-o pull-right"></i>
+            </h3>
+
+            <p class="description">
+                Both of my undergraduate fields of study have helped me greatly in performing 
+                duties related to the classroom.  I have a talent for anticipating 
+                students' needs, accommodating different learning styles, and 
+                improvising where necessary to maximize the overall bootcamp experience.
+            </p>
+
+            <p class="description">
+                Working at Rackspace allowed me to apply the lessons learned from an educational 
+                background in humanities towards a technical career.  While there, I mastered the 
+                delicate art of customer support and learned how to navigate all sorts of various
+                technological and psychological quagmires.
+            </p>
+
+            <p class="description">
+                All of these learning opportunities coalesced together into a beautiful singularity
+                when I discovered the distinct pleasure of teaching at Codeup.  The daily challenges
+                involved in that role are those for which I am well-suited.  Learning new material; 
+                breaking that knowledge down into manageable chunks to teach students; keeping them
+                focused and motivated during times when frustrations and new concepts seem insurmountable...
+                these are the most recent skills I've acquired and I am very proud of them.  
+        </div>
+
+
     </div>
 
 @stop

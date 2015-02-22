@@ -89,16 +89,16 @@
     // as supplied by the browser's 'navigator.geolocation' object.
     
     function geolocate() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
 
-          var geolocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-          var circle = new google.maps.Circle({
+            var geolocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            var circle = new google.maps.Circle({
             center: geolocation,
             radius: position.coords.accuracy
-          });
+            });
 
-          autocomplete.setBounds(circle.getBounds());
+            autocomplete.setBounds(circle.getBounds());
         });
       }
     }
@@ -110,7 +110,7 @@
 
 @section('content')
     
-    <h2 class="page-header">Google Maps JavaScript API v3 <small>Plotting Markers</small></h2>
+    <h2 class="page-header">Google Maps JavaScript API v3 <small>Ajax Request</small></h2>
 
     <div class="row">
         {{ Form::open(array('action' => 'AddressesController@store')) }}
@@ -161,7 +161,6 @@
     <div class="col-md-12">
         <div class="row">
             <a href="/markers" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
-            <a href="/ajax" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 
@@ -198,7 +197,7 @@
             
             var bounds = new google.maps.LatLngBounds();
 
-            // Perform ajax request to get all addresses in db            
+            // Perform ajax request to get all addresses from db            
             $.ajax({
                 type: "POST",
                 url: "/ajax",
@@ -206,21 +205,28 @@
                 data: {}
             })
             .done(function(data) {
+                // Loop through returned data
                 for (var i = 0; i < data.length; i++) {
 
                     console.log(data[i]);
 
+                    // Geocode the addresses received
                     var geoCode = new google.maps.LatLng(data[i].latitude, data[i].longitude);
+                    
+                    // Create marker from geocoded address
                     var marker = new google.maps.Marker({
                         position: geoCode,
                         map: map
                     });
 
+                    // Add marker to array.
                     markers.push(marker);
+                    // Extend map bounds
                     bounds.extend(geoCode);
 
                 };
 
+                // Fit map to bounds
                 map.fitBounds(bounds);
 
             });    
