@@ -11,8 +11,6 @@
         
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
         
-        {{ Form::hidden('tag_list', null, array('id' => 'tag_list')) }}
-
         {{ Form::submit('Create Post', array('class' => 'btn btn-primary pull-right')) }}
     {{ Form::close() }}
 </div>
