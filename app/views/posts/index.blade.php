@@ -6,7 +6,7 @@
 
 @if(count($posts) == 0)
 
-    <h3> No posts found.  </h3>
+    <h3> No posts found. </h3>
 
 @endif
 
@@ -28,7 +28,7 @@
 
         <div class="col-md-12">
             @if(!empty($post->img_path))
-                <img class="img-responsive img-bordered" src="{{{ $post->img_path }}}" alt="">
+                <img class="img-responsive img-bordered header-image" src="{{{ $post->img_path }}}" alt="">
             @else
                 <img class="img-responsive img-bordered" src="http://placehold.it/900x200" alt="">
             @endif
