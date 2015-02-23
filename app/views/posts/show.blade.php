@@ -32,7 +32,7 @@
             @endif
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
             @foreach ($post->tags as $tag)
                 <a href="" class="badge">{{ $tag->name }}</a>
             @endforeach

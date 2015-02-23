@@ -11,7 +11,7 @@
         
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
         
-        {{ Form::submit('Create Post', array('class' => 'btn btn-primary pull-right')) }}
+        {{ Form::submit('Save Post', array('class' => 'btn btn-primary pull-right')) }}
     {{ Form::close() }}
 </div>
 
