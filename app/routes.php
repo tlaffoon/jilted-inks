@@ -21,8 +21,11 @@ Route::get('/findPost/{id}', function ($id) {
 });
 
 Route::post('/addTag', function() {
-    //
-    return Response::json($post);
+    
+    $post = Post::findPost(Input::get('post_id'));
+    $tag = Input::get('tag');
+
+    return Response::json(array($post, $tag));
 });
 
 Route::get('/', 'HomeController@showHome');

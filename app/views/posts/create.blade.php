@@ -11,12 +11,25 @@
         
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
         
+        {{ Form::hidden('tag_list', null, array('id' => 'tag_list')) }}
+
         {{ Form::submit('Create Post', array('class' => 'btn btn-primary pull-right')) }}
     {{ Form::close() }}
 </div>
 
 <div class="col-md-4">
-    @include('posts.partials.tag-form')
+    
+    <form id="addTagForm" action="/addTag" method="POST">
+        <label for="tag">Add Tag</label>
+        <div class="input-group">
+            <input type="text" class="form-control" name="tag">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">
+                    <i class="fa fa-plus-square-o"></i>
+                </button>
+            </span>
+        </div>
+    </form>
 
     <h5 class="page-header">Tags</h5>
     <div id="tag-box"></div>
@@ -55,7 +68,7 @@ $(document).ready(function() {
 
         // add to array
         tags.push(tag);
-        console.log(tags);
+        // console.log(tags);
 
         // reset add tag from input value
         $('#addTagForm :input').val('');
@@ -67,6 +80,10 @@ $(document).ready(function() {
         for (var i = 0; i < tags.length; i++) {
             $('#tag-box').append('<span class="badge">' + tags[i] + '</span>');
         };
+
+        // Update Form Input w/Tags Array
+        $('#tag_list').val(tags);
+        // console.log($('#tag_list').val());
 
     });
 });

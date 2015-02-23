@@ -167,12 +167,19 @@ class PostsController extends \BaseController
                 $post->save();
             }
 
-            // if (Input::has('tag_list')) {
+            if (Input::has('tag_list')) {
                 
-            //         $post->tag_list = Input::get('tag_list');
-            //         $tag = Tag::firstOrCreate(array());
-            //         $post->tags()->sync(array($tag->id));
-            // }
+
+                    $tag_list = Input::get('tag_list');
+                    $tag_list = explode(',', $tag_list);
+
+                    foreach ($tag_list as $tag) {
+                        $tag = Tag::firstOrCreate(array('name' => $tag));
+                        $post->tags[] = $tag;
+                    }
+                    
+                    $post->tags()->sync($post->tags);
+            }
 
             Session::flash('successMessage', 'Post saved successfully!');
 
