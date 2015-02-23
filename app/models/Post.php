@@ -25,7 +25,7 @@ class Post extends Eloquent
 
     public function renderBody($summary = false) 
     {
-        return $body = ($summary == false) ? str_limit($this->body, 300) : $this->body;
+        return $body = ($summary == false) ? $this->body : str_limit($this->body, 300);
     }
 
     public function addUploadedImage($image) 

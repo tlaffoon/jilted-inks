@@ -42,7 +42,7 @@
 
         <div class="col-md-12">
             <div class="post-body">
-                {{ $post->renderBody() }}
+                {{ $post->renderBody(true) }}
             </div>
             <a href="{{{ action('PostsController@show', $post->slug) }}}" class="btn btn-default pull-right">View Post</a>
         </div>
