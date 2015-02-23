@@ -1,11 +1,50 @@
-@extends('layouts.master')
+@extends('layouts.awesome')
+
+@section('css')
+<style type="text/css">
+    .img-box {
+        margin: 5px;
+    }
+</style>
+@stop
 
 @section('content')
-    <h1>My Awesome Portfolio of Projects and Work</h1>
+    <h2 class="page-header">Portfolio</h2>
 
+    <div class="row">
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+    </div>
 
-
-    <a href="{{ action('HomeController@showResume', array('name' => $name)) }}">Click to view my resume</a>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+        <div class="col-md-4">
+            <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
+        </div>
+    </div>
 
 @stop

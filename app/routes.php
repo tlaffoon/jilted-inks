@@ -62,6 +62,10 @@ Route::get('/resume', function() {
     return View::make('resume');
 });
 
+Route::get('/portfolio', function() {
+    return View::make('portfolio');
+});
+
 Route::get('/contact', function() {
     return View::make('contact');
 });
