@@ -17,6 +17,9 @@
 
 <div class="col-md-4">
     @include('posts.partials.tag-form')
+
+    <h5 class="page-header">Tags</h5>
+    <div id="tag-box"></div>
 </div>
 
 @stop
@@ -24,9 +27,13 @@
 @section('bottomscript')
 <script type="text/javascript">
 
+$(document).ready(function() {
     var title = $('#title');
     var $slug = $('#slug');
     var value;
+
+    var tags = [];
+    var tag;
 
     // Trigger callback function when title value changes
     title.on('change', function () {
@@ -36,6 +43,34 @@
         $slug.val(value.toLowerCase().trim().split(/\s+/).join('-'));
 
     });
+
+    $('#addTagForm').on('submit', function (e) {
+        e.preventDefault();
+        
+        // grab tag value
+        tag = $('#addTagForm :input').val();
+
+        // sanitize that input
+        // ... 
+
+        // add to array
+        tags.push(tag);
+        console.log(tags);
+
+        // reset add tag from input value
+        $('#addTagForm :input').val('');
+
+        // Reset Tag Box
+        $('#tag-box').html('');
+
+        // Add Tag Values to Tag Box
+        for (var i = 0; i < tags.length; i++) {
+            $('#tag-box').append('<span class="badge">' + tags[i] + '</span>');
+        };
+
+    });
+});
+
 
 </script>
 @stop
