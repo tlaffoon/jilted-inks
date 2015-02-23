@@ -34,6 +34,12 @@
             @endif
         </div>
 
+        <div class="col-md-12 text-center">
+            @foreach ($post->tags as $tag)
+                <a href="" class="badge">{{ $tag->name }}</a>
+            @endforeach
+        </div>
+
         <div class="col-md-12">
             <div class="post-body">
                 {{ $post->renderBody() }}

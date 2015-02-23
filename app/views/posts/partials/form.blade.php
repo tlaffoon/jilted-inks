@@ -21,3 +21,5 @@
     {{ Form::file('image', array('class' => 'form-group')) }}
     {{ $errors->first('image', '<span class="help-block"><p class="text-warning">:message</p></span><br>') }}
 </div>
+
+{{ Form::hidden('tag_list', null, array('id' => 'tag_list')) }}

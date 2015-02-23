@@ -39,7 +39,9 @@ body {
 }
 
 .post-body {
+    padding-top: 20px;
     padding-bottom: 20px;
+    text-indent: 15px;
 }
 
 .post-info {

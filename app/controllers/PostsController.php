@@ -169,9 +169,17 @@ class PostsController extends \BaseController
 
             if (Input::has('tag_list')) {
                 
+                    $tagsArray = $post->tags->toArray();
 
                     $tag_list = Input::get('tag_list');
                     $tag_list = explode(',', $tag_list);
+
+                    foreach ($tagsArray as $tag) {
+                        $tag_list[] = $tag['name'];
+                    }
+
+                    sort($tag_list);
+                    $tag_list = array_unique($tag_list);
 
                     foreach ($tag_list as $tag) {
                         $tag = Tag::firstOrCreate(array('name' => $tag));
@@ -182,7 +190,6 @@ class PostsController extends \BaseController
             }
 
             Session::flash('successMessage', 'Post saved successfully!');
-
             return Redirect::action('PostsController@show', $post->slug);
         }
     }
