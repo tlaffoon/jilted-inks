@@ -159,6 +159,7 @@ class PostsController extends \BaseController
             $post->title = Input::get('title');
             $post->body  = Input::get('body');
             $post->slug  = Input::get('slug');
+            $post->save();
 
             if (Input::hasFile('image') && Input::file('image')->isValid())
             {
@@ -166,7 +167,19 @@ class PostsController extends \BaseController
                 $post->save();
             }
 
-            $post->save();
+            if (Input::has('tag_list')) {
+                
+
+                    $tag_list = Input::get('tag_list');
+                    $tag_list = explode(',', $tag_list);
+
+                    foreach ($tag_list as $tag) {
+                        $tag = Tag::firstOrCreate(array('name' => $tag));
+                        $post->tags[] = $tag;
+                    }
+                    
+                    $post->tags()->sync($post->tags);
+            }
 
             Session::flash('successMessage', 'Post saved successfully!');
 

@@ -20,6 +20,14 @@ Route::get('/findPost/{id}', function ($id) {
     dd($post);
 });
 
+Route::post('/addTag', function() {
+    
+    $post = Post::findPost(Input::get('post_id'));
+    $tag = Input::get('tag');
+
+    return Response::json(array($post, $tag));
+});
+
 Route::get('/', 'HomeController@showHome');
 Route::get('/maps', function() {
     return View::make('maps.index');

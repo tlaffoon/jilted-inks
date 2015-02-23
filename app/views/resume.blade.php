@@ -111,7 +111,7 @@
 
             <div class="col-md-2">
                 <a href="" target="_blank"></a>
-                <img src="/includes/img/linux.png" class="img img-responsive img-rounded">
+                <img src="/includes/img/linux2.gif" class="img img-responsive img-rounded">
             </div>
 
             <div class="col-md-2">
@@ -240,10 +240,18 @@
                 involved in that role are those for which I am well-suited.  Learning new material; 
                 breaking that knowledge down into manageable chunks to teach students; keeping them
                 focused and motivated during times when frustrations and new concepts seem insurmountable...
-                these are the most recent skills I've acquired and I am very proud of them.  
+                these are the most recent skills I've acquired and I am very proud of them.
+            </p>
         </div>
+    </div>
 
-
+    <!-- Skills -->
+    <div class="row box img-rounded">
+        <div class="col-md-12">
+            <h4>
+                Letters of Recommendation/References available upon request.
+            </h4>
+        </div>
     </div>
 
 @stop

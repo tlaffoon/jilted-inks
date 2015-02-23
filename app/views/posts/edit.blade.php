@@ -4,13 +4,20 @@
 
 <div class="page-header"><h1>Update Post</h1></div>
 
-{{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'files' => true)) }}
-    
-    @include('posts.partials.form')
-    
-    <a href="{{{ action('PostsController@show', $post->slug) }}}" class="btn btn-default">Cancel</a>
-    {{ Form::submit('Save Changes', array('class' => 'btn btn-primary pull-right')) }}
-{{ Form::close() }}
+<div class="col-md-8">
+    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'put', 'files' => true)) }}        
+
+        @include('posts.partials.form')
+        
+        <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
+        
+        {{ Form::submit('Create Post', array('class' => 'btn btn-primary pull-right')) }}
+    {{ Form::close() }}
+</div>
+
+<div class="col-md-4">
+    @include('posts.partials.tag-form')
+</div>
 
 @stop
 

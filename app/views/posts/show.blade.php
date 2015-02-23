@@ -13,8 +13,8 @@
     <div class="col-md-12 blog-box img-rounded">
 
         <div class="col-md-8 text-left">
-            <h3><a href="{{{ action('PostsController@show', $post->slug) }}}"> {{{ $post->title }}} </a></h3>
-            <h5>by {{{ $post->user->username }}}</h5>  
+            <h3> {{{ $post->title }}} </h3>
+            <h5>by {{{ $post->user->username }}}</h5>
         </div>
 
         <div class="col-md-4">
@@ -24,12 +24,18 @@
             </p>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
             @if(!empty($post->img_path))
-                <img class="img-responsive img-bordered" src="{{{ $post->img_path }}}" alt="">
+                <img class="img-responsive img-bordered header-image" src="{{{ $post->img_path }}}" alt="">
             @else
                 <img class="img-responsive img-bordered" src="http://placehold.it/900x200" alt="">
             @endif
+        </div>
+
+        <div class="col-md-12">
+            @foreach ($post->tags as $tag)
+                <a href="" class="badge">{{ $tag->name }}</a>
+            @endforeach
         </div>
 
         <div class="col-md-12">

@@ -9,6 +9,10 @@ body {
     margin-bottom: 70px;
 }
 
+.header-image {
+    margin: 0 auto;
+}
+
 .navbar-default {
   background-color: #fff;
   border-color: #eee;
