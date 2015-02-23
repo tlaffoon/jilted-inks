@@ -11,6 +11,8 @@ return array(
     'DEFAULT_USER_PASSWORD' => '',
     'DEFAULT_USER_ROLE_ID' => '',
 
-    'MAILTRUST_DOMAIN' => '',
-    'MAILTRUST_SECRET' => ''
+    'MAILGUN_USER' => '',
+    'MAILGUN_PASS' => '',
+    'MAILGUN_DOMAIN' => '',
+    'MAILGUN_SECRET' => ''
 );

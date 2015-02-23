@@ -19,17 +19,7 @@
 
 <div class="col-md-4">
     
-    <form id="addTagForm" action="/addTag" method="POST">
-        <label for="tag">Add Tag</label>
-        <div class="input-group">
-            <input type="text" class="form-control" name="tag">
-            <span class="input-group-btn">
-                <button type="submit" class="btn btn-default">
-                    <i class="fa fa-plus-square-o"></i>
-                </button>
-            </span>
-        </div>
-    </form>
+    @include('posts.partials.tag-form')
 
     <h5 class="page-header">Tags</h5>
     <div id="tag-box"></div>
@@ -39,7 +29,6 @@
 
 @section('bottomscript')
 <script type="text/javascript">
-
 $(document).ready(function() {
     var title = $('#title');
     var $slug = $('#slug');
@@ -68,7 +57,6 @@ $(document).ready(function() {
 
         // add to array
         tags.push(tag);
-        // console.log(tags);
 
         // reset add tag from input value
         $('#addTagForm :input').val('');
@@ -83,11 +71,8 @@ $(document).ready(function() {
 
         // Update Form Input w/Tags Array
         $('#tag_list').val(tags);
-        // console.log($('#tag_list').val());
 
     });
 });
-
-
 </script>
 @stop

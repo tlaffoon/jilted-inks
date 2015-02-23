@@ -8,7 +8,7 @@
 <div class="contact-box">
     <h3 class="content-header"> Send A Message! </h3>
 
-        {{ Form:: open(array('action' => 'MessageController@store')) }}
+        {{ Form:: open(array('action' => 'MessagesController@store')) }}
 
             {{ Form::label('name', 'Name') }}
             {{ Form::text('name', Input::old('name'), array('placeholder' => 'Name', 'class' => 'form-group form-control')) }}

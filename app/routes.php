@@ -58,8 +58,12 @@ Route::post('/ajax', function() {
     return Response::json($addresses);
 });
 
-Route::get('resume', function() {
+Route::get('/resume', function() {
     return View::make('resume');
+});
+
+Route::get('/contact', function() {
+    return View::make('contact');
 });
 
 Route::get('search', function() {
@@ -68,6 +72,7 @@ Route::get('search', function() {
 
 
 Route::resource('addresses', 'AddressesController');
+Route::resource('messages', 'MessagesController');
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
 Route::resource('roles', 'RolesController');
