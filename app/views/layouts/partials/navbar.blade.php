@@ -19,8 +19,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/resume">Resume</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <!-- <li><a href="/maps">GMaps Demo</a></li> -->
+                <!-- <li><a href="/contact">Contact</a></li> -->
             </ul>
 
             <!-- Navbar Search Form -->
