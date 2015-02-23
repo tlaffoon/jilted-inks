@@ -8,5 +8,9 @@ return array(
     'DEFAULT_USER_USERNAME' => '',
     'DEFAULT_USER_NAME' => '',
     'DEFAULT_USER_EMAIL' => '',
-    'DEFAULT_USER_PASSWORD' => ''
+    'DEFAULT_USER_PASSWORD' => '',
+    'DEFAULT_USER_ROLE_ID' => '',
+
+    'MAILTRUST_DOMAIN' => '',
+    'MAILTRUST_SECRET' => ''
 );
