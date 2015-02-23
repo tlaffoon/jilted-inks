@@ -125,11 +125,7 @@ class PostsController extends \BaseController
             App::abort(404);
         }
 
-        // $post->delete();
-
-        Post::destroy($post);
-        
-        Session::flash('successMessage', 'Post deleted!');
+        $post->delete();        
         
         return Redirect::action('PostsController@index');
     }
