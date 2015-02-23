@@ -86,37 +86,37 @@
 
         <div class="row no-pad">
             <div id="1" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/chris.jpg">
+                <img class="mole" src="includes/img/chris.jpg">
             </div>
             <div id="2" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/mike.jpg">
+                <img class="mole" src="includes/img/mike.jpg">
             </div>
             <div id="3" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/jason.jpg">
+                <img class="mole" src="includes/img/jason.jpg">
             </div>
         </div> <!-- End Row -->
 
         <div class="row no-pad">
             <div id="4" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/thomas.jpg">
+                <img class="mole" src="includes/img/thomas.jpg">
             </div>
             <div id="5" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/jenni.jpg">
+                <img class="mole" src="includes/img/jenni.jpg">
             </div>
             <div id="6" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/gc_face.png">
+                <img class="mole" src="includes/img/gc_face.png">
             </div>
         </div> <!-- End Row -->
 
         <div class="row no-pad">
             <div id="7" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/greg.jpg">
+                <img class="mole" src="includes/img/greg.jpg">
             </div>
             <div id="8" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/isaac.jpg">
+                <img class="mole" src="includes/img/isaac.jpg">
             </div>
             <div id="9" class="lil-box">
-                <img class="mole img-rounded" src="includes/img/ryan.jpg">
+                <img class="mole" src="includes/img/ryan.jpg">
             </div>
         </div> <!-- End Row -->
 

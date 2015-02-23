@@ -29,29 +29,18 @@ Route::post('/addTag', function() {
 });
 
 Route::get('/', 'HomeController@showHome');
-Route::get('/maps', function() {
-    return View::make('maps.index');
-});
 
-Route::get('/geolocate', 'HomeController@showGeolocate');
 Route::get('/gmaps', 'HomeController@showGmaps');
+Route::get('/geolocate', 'HomeController@showGeolocate');
 
-Route::get('/autocomplete', function() {
-    return View::make('maps.autocomplete');
-});
+Route::get('/autocomplete', 'HomeController@showAutocomplete');
 Route::post('/autocomplete', 'HomeController@storeAddress');
 
-Route::get('/geocode', function() {
-    return View::make('maps.geocode');
-});
+Route::get('/geocode', 'HomeController@showGeocode');
 
-Route::get('/markers', function() {
-    return View::make('maps.markers');
-});
+Route::get('/markers', 'HomeController@showMarkers');
 
-Route::get('/ajax', function () {
-    return View::make('maps.ajax');
-});
+Route::get('/ajax', 'HomeController@showAjax');
 
 Route::post('/ajax', function() {
     $addresses = Address::all();

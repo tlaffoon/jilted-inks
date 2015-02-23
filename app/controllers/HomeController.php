@@ -19,16 +19,6 @@ class HomeController extends \BaseController {
 		return Redirect::action('PostsController@index');
 	}
 
-	public function showResume()
-	{
-		return View::make('resume');
-	}
-
-	public function showPortfolio()
-	{
-		return View::make('portfolio');
-	}
-
 	public function showLogin()
 	{
 		return View::make('login');
@@ -55,6 +45,36 @@ class HomeController extends \BaseController {
 		Auth::logout();
 		Session::flash('successMessage', 'Logout successful.');
 		return Redirect::action('HomeController@showHome');
+	}
+
+	public function showResume()
+	{
+		return View::make('resume');
+	}
+
+	public function showPortfolio()
+	{
+		return View::make('portfolio');
+	}
+
+	public function showGmaps() {
+		return View::make('maps.index');
+	}
+
+	public function showAutocomplete() {
+		return View::make('maps.autocomplete');
+	}
+
+	public function showGeocode() {
+		return View::make('maps.geocode');
+	}
+
+	public function showMarkers() {
+		return View::make('maps.markers');
+	}
+
+	public function showAjax() {
+		return View::make('maps.ajax');
 	}
 }
 

@@ -95,7 +95,7 @@
             <p> This is an example of a simple map which can accept address input and plot <a href="https://developers.google.com/maps/documentation/javascript/markers">markers</a> accordingly. </p>
             <p> It's primary limitation is that it cannot reset its bounds according to the markers which are included in its array. </p>
             <p> There are solutions out there which <em>are</em> intelligent enough to do so, like <a href="http://stackoverflow.com/questions/6332970/reset-bounds-on-google-maps-api-v3">this one</a>. </p>
-            <p> To understand fully the solution outlined there, you'll need to understand <a href="http://franklin.codeup.com/jquery/ajax/ajax-intro.html">AJAX requests</a>.</p>
+            <p> To understand fully the solution outlined there, you'll need to understand <a href="http://www.sitepoint.com/use-jquerys-ajax-function/">AJAX requests</a>.</p>
         </div>
     </div>
 
