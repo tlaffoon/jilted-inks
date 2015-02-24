@@ -101,8 +101,8 @@
 
     <div class="col-md-12">
         <div class="row">
-            <a href="/geocode" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
-            <a href="/ajax" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
+            <a href="/gmaps/geocode" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
+            <a href="/gmaps/ajax" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 

@@ -4,11 +4,6 @@
 <link rel="stylesheet" type="text/css" href="includes/bootstrap/css/bootstrap.css">
 <style type="text/css">
 
-    body {
-        color: white;
-        background-image: url('includes/img/bg.png');
-    }
-
     .main-box {
         border: solid black 1px;
         height: 596px;

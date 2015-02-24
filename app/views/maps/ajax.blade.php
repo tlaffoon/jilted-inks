@@ -160,7 +160,7 @@
 
     <div class="col-md-12">
         <div class="row">
-            <a href="/markers" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
+            <a href="/gmaps/markers" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
         </div>
     </div>
 
