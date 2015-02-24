@@ -89,8 +89,8 @@
 
     <div class="col-md-12">
         <div class="row">
-            <a href="/autocomplete" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
-            <a href="/markers" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
+            <a href="/gmaps/autocomplete" class="btn btn-default pull-left"><i class="fa fa-arrow-left"></i></a>
+            <a href="/gmaps/markers" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 

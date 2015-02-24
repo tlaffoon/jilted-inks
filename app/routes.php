@@ -31,18 +31,18 @@ Route::post('/addTag', function() {
 Route::get('/', 'HomeController@showHome');
 
 Route::get('/gmaps', 'HomeController@showGmaps');
-Route::get('/geolocate', 'HomeController@showGeolocate');
+Route::get('/gmaps/geolocate', 'HomeController@showGeolocate');
 
-Route::get('/autocomplete', 'HomeController@showAutocomplete');
-Route::post('/autocomplete', 'HomeController@storeAddress');
+Route::get('/gmaps/autocomplete', 'HomeController@showAutocomplete');
+Route::post('/gmaps/autocomplete', 'HomeController@storeAddress');
 
-Route::get('/geocode', 'HomeController@showGeocode');
+Route::get('/gmaps/geocode', 'HomeController@showGeocode');
 
-Route::get('/markers', 'HomeController@showMarkers');
+Route::get('/gmaps/markers', 'HomeController@showMarkers');
 
-Route::get('/ajax', 'HomeController@showAjax');
+Route::get('/gmaps/ajax', 'HomeController@showAjax');
 
-Route::post('/ajax', function() {
+Route::post('/gmaps/ajax', function() {
     $addresses = Address::all();
     return Response::json($addresses);
 });
@@ -68,5 +68,4 @@ Route::resource('addresses', 'AddressesController');
 Route::resource('messages', 'MessagesController');
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
-Route::resource('roles', 'RolesController');
 Route::resource('users', 'UsersController');    
