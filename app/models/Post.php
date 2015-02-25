@@ -27,7 +27,7 @@ class Post extends Eloquent
     }
 
     // Setter for body. Formats post body to include paragraph breaks.
-    public function setBody($string) {
+    public function setBodyAttribute($string) {
         
         $array = explode("\n", $string);
         foreach ($array as $key => $value) {
