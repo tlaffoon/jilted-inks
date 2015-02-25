@@ -45,7 +45,6 @@ class MessagesController extends \BaseController {
 	        $message->name = Input::get('name');
 	        $message->email = Input::get('email');
 	        $message->content = Input::get('content');
-
 	        $message->save();
 
 	        Mail::send('emails.message', $data, function($message) use ($data) {
@@ -57,7 +56,7 @@ class MessagesController extends \BaseController {
 	        Session::flash('message', 'Your message has been sent. Thank You!');
 
 	        // Redirect to page
-	        return Redirect::back();
+	        return Redirect::to('/');
 
 	    } else {
 	        //return contact form with errors

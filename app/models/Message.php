@@ -7,8 +7,9 @@ class Message extends Eloquent {
     public static $rules = array(
         'name'      => 'required',
         'email'     => 'required|email',
-        'content'   => 'required|max:1000'
+        'content'   => 'required|max:1000',
+        'honey_pot' => 'honey_pot'
     );
     
-    protected $fillable = ['name', 'email', 'content'];
+    protected $fillable = ['name', 'email', 'content', 'honey_pot'];
 }
