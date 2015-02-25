@@ -10,38 +10,13 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get('/', 'HomeController@showHome');
 
 Route::get('login',  'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('logout', 'HomeController@doLogout');
 
-Route::post('/contact', 'HomeController@sendEmail');
-
-Route::get('/testEmail', function() {
-
-    $data = ['name' => 'Johnson Wifflesburg', 'email' => 'user@domain.com', 'content' => 'This is the content.'];
-
-    Mailgun::send('emails.message', $data, function($message)
-    {
-        $message->to($_ENV['DEFAULT_USER_EMAIL'], $_ENV['DEFAULT_USER_NAME'])->subject('Welcome!');
-    });
-});
-
-Route::get('/findPost/{id}', function ($id) {
-    $post = Post::findPost($id);
-    dd($post);
-});
-
-Route::post('/addTag', function() {
-    
-    $post = Post::findPost(Input::get('post_id'));
-    $tag = Input::get('tag');
-
-    return Response::json(array($post, $tag));
-});
-
-Route::get('/', 'HomeController@showHome');
-
+// Gmaps Routes.
 Route::get('/gmaps', 'HomeController@showGmaps');
 Route::get('/gmaps/geolocate', 'HomeController@showGeolocate');
 
@@ -59,6 +34,7 @@ Route::post('/gmaps/ajax', function() {
     return Response::json($addresses);
 });
 
+// Random views.
 Route::get('/resume', function() {
     return View::make('resume');
 });
@@ -71,11 +47,27 @@ Route::get('/contact', function() {
     return View::make('contact');
 });
 
+Route::post('/contact', 'HomeController@sendEmail');
+
 Route::get('search', function() {
     return View::make('maps.search');
 });
 
+Route::post('/addTag', function() {
+    
+    $post = Post::findPost(Input::get('post_id'));
+    $tag = Input::get('tag');
 
+    return Response::json(array($post, $tag));
+});
+
+// Dashboard routes.
+Route::get('/dashboard', 'HomeController@showDashboard');
+Route::post('/dashboard', function() {
+    return View::make('posts.dashboard');
+});
+
+// Resource routes.
 Route::resource('addresses', 'AddressesController');
 Route::resource('messages', 'MessagesController');
 Route::resource('posts', 'PostsController');

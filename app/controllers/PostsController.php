@@ -133,7 +133,7 @@ class PostsController extends \BaseController
 
         $post->delete();        
         
-        return Redirect::action('PostsController@index');
+        return Redirect::action('HomeController@showDashboard');
     }
 
     protected function savePost($post)

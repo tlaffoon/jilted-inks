@@ -47,12 +47,6 @@ class MessagesController extends \BaseController {
 	        $message->content = Input::get('content');
 	        $message->save();
 
-	        Mail::send('emails.message', $data, function($message) use ($data) {
-	            $message->from($data['email'] , $data['name']);
-	            $message->to($_ENV['DEFAULT_USER_EMAIL'], $_ENV['DEFAULT_USER_NAME']);
-	            $message->subject('Blog Contact Form');
-	        });
-
 	        Session::flash('message', 'Your message has been sent. Thank You!');
 
 	        // Redirect to page
