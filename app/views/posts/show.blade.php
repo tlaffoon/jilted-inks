@@ -44,16 +44,16 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            @if (Auth::check())
-                {{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'delete')) }}
-                    {{ Form::submit('Delete Post', array('class' => 'btn btn-danger')) }}
-                {{ Form::close() }}
-            @endif
-        </div>
-        <div class="col-md-6">
-            <a href="{{{ action('PostsController@edit', $post->slug) }}}" class="btn btn-default pull-right">Edit Post</a>
-        </div>
+        @if (Auth::check())
+            <div class="col-md-6">
+                    {{ Form::open(array('action' => array('PostsController@destroy', $post->id), 'method' => 'delete')) }}
+                        {{ Form::submit('Delete Post', array('class' => 'btn btn-danger')) }}
+                    {{ Form::close() }}
+            </div>
+            <div class="col-md-6">
+                <a href="{{{ action('PostsController@edit', $post->slug) }}}" class="btn btn-default pull-right">Edit Post</a>
+            </div>
+        @endif
     </div>
 </div>
 
