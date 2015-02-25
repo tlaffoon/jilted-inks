@@ -47,32 +47,6 @@ class HomeController extends \BaseController {
 		return Redirect::action('HomeController@showHome');
 	}
 
-	public function showDashboard() {
-		$query = Post::with('user');
-		
-		if (Input::has('search')) {
-		    $search = '%' . Input::get('search') . '%';
-		    
-		    $query->where('title', 'like', $search);
-		    
-		    $query->orWhereHas('user', function($q) {
-		        $search = '%' . Input::get('search') . '%';
-		        
-		        $q->where('email', 'like', $search);
-		    });
-
-		    $query->orWhereHas('tags', function($q) {
-		        $search = '%' . Input::get('search') . '%';
-		        
-		        $q->where('name', 'like', $search);
-		    });
-		}
-		
-		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
-		
-		return View::make('posts.dashboard')->with('posts', $posts);
-	}
-
 	public function sendEmail() {
 
 		// Get all the input and store it inside variable.

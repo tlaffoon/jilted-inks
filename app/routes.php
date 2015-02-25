@@ -62,7 +62,7 @@ Route::post('/addTag', function() {
 });
 
 // Dashboard routes.
-Route::get('/dashboard', 'HomeController@showDashboard');
+Route::get('/dashboard', 'PostsController@showDashboard');
 Route::post('/dashboard', function() {
     return View::make('posts.dashboard');
 });
