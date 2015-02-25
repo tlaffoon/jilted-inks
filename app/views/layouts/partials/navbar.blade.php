@@ -40,7 +40,7 @@
                     </li>
                 @else
                     <li><a href="{{{ action('PostsController@create') }}}">Create Post</a></li>
-                    <li><a href="{{{ action('PostsController@index') }}}">Manage Posts</a></li>
+                    <li><a href="{{{ action('HomeController@showDashboard') }}}">Manage Posts</a></li>
                     <li><a href="{{{ action('HomeController@doLogout') }}}">Log Out</a></li>
                 @endif
             </ul>
