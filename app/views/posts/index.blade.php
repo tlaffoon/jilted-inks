@@ -36,7 +36,7 @@
 
         <div class="col-md-12 text-center">
             @foreach ($post->tags as $tag)
-                <a href="" class="badge">{{ $tag->name }}</a>
+                <a href="/posts?search={{{$tag->name}}}" class="badge">{{ $tag->name }}</a>
             @endforeach
         </div>
 
