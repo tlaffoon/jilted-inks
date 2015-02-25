@@ -41,9 +41,9 @@ class MessagesController extends \BaseController {
 	    if ($validator -> passes()) {
 
 	        $message = new Message();
-
 	        $message->name = Input::get('name');
 	        $message->email = Input::get('email');
+	        $message->subject = Input::get('subject');
 	        $message->content = Input::get('content');
 	        $message->save();
 

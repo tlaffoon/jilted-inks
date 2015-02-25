@@ -8,8 +8,9 @@ class Message extends Eloquent {
         'name'      => 'required',
         'email'     => 'required|email',
         'content'   => 'required|max:1000',
+        'subject'   => 'required',
         'honey_pot' => 'honey_pot'
     );
     
-    protected $fillable = ['name', 'email', 'content', 'honey_pot'];
+    protected $fillable = ['name', 'email', 'subject', 'content', 'honey_pot'];
 }
