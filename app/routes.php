@@ -15,6 +15,18 @@ Route::get('login',  'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('logout', 'HomeController@doLogout');
 
+Route::post('/contact', 'HomeController@sendEmail');
+
+Route::get('/testEmail', function() {
+
+    $data = ['name' => 'Johnson Wifflesburg', 'email' => 'user@domain.com', 'content' => 'This is the content.'];
+
+    Mailgun::send('emails.message', $data, function($message)
+    {
+        $message->to($_ENV['DEFAULT_USER_EMAIL'], $_ENV['DEFAULT_USER_NAME'])->subject('Welcome!');
+    });
+});
+
 Route::get('/findPost/{id}', function ($id) {
     $post = Post::findPost($id);
     dd($post);

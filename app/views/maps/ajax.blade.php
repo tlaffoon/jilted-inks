@@ -200,7 +200,7 @@
             // Perform ajax request to get all addresses from db            
             $.ajax({
                 type: "POST",
-                url: "/ajax",
+                url: "/gmaps/ajax",
                 dataType: "json",
                 data: {}
             })

@@ -202,7 +202,6 @@
                 <a href="/gmaps/geocode" class="btn btn-default pull-right"><i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
-
 @stop
 
 @section('bottomscript')
