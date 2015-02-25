@@ -30,6 +30,12 @@ class PostsController extends \BaseController
                 
                 $q->where('email', 'like', $search);
             });
+
+            $query->orWhereHas('tags', function($q) {
+                $search = '%' . Input::get('search') . '%';
+                
+                $q->where('name', 'like', $search);
+            });
         }
         
         $posts = $query->orderBy('created_at', 'desc')->paginate(4);
