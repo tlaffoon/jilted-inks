@@ -83,7 +83,6 @@ class HomeController extends \BaseController {
 			
 			// Redirect back with errors etc.
 			return Redirect::back()->withInput()->withErrors($validator);
-
 		}
 	}
 
