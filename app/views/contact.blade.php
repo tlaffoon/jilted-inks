@@ -5,7 +5,7 @@
 
 @section('content')
 
-<div class="col-md-12">
+<div class="col-md-6 col-md-offset-3">
     <h3 class="page-header"> Send A Message! </h3>
 
         {{ Form::open(array('action' => 'HomeController@sendEmail')) }}

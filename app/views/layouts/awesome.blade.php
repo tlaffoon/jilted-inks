@@ -41,7 +41,7 @@
         <div class="row">
 
             <!-- Flash Messages -->
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 
                 @if (Session::has('successMessage'))
                     <div class="alert alert-success alert-dismissable">

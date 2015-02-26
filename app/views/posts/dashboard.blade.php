@@ -4,11 +4,11 @@
 @stop
 
 @section('topscript')
+@stop
 
-{{-- @include('layouts.partials.sidebar') --}}
+@section('content')
 
-
-    <div class="col-md-12">
+    <div class="row">
         <h2 class="page-header">
             Manage Your Posts
         </h2>
@@ -32,11 +32,9 @@
             </tr>
             @endforeach
         </table>
+
+
     </div>
-
-@stop
-
-@section('content')
 @stop
 
 @section('bottomscript')

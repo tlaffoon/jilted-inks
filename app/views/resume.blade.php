@@ -28,6 +28,8 @@
 
 @section('content')
 
+<div class="col-md-10 col-md-offset-1">
+
     <!-- Header / Bio -->
     <div class="row box img-rounded">
         <div class="col-md-12"> 
@@ -305,6 +307,7 @@
             </h4>
         </div>
     </div>
+</div>
 @stop
 
 @section('bottomscript')
