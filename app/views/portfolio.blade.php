@@ -9,6 +9,9 @@
 @stop
 
 @section('content')
+
+<div class="col-md-10 col-md-offset-1">
+
     <h2 class="page-header">Portfolio</h2>
 
     <div class="row">
@@ -53,5 +56,6 @@
             <img src="http://placehold.it/220x220" class="img-responsive img-rounded img-box">
         </div>
     </div>
+</div>
 
 @stop
