@@ -1,7 +1,16 @@
-{{ Form::label('body', 'Body') }}
-<div id="wmd-button-bar"></div>
-{{ Form::textarea('body', Input::old('body'), array('id' => 'wmd-input', 'class' => 'wmd-input wmd-panel form-group form-control')) }}
-{{ $errors->first('body', '<span class="help-block"><p class="text-warning">:message</p></span><br>') }}
+<div class="form-group {{{ $errors->has('body') ? 'has-error' : '' }}}">
+    {{ Form::label('body', 'Body') }}
+    <div id="wmd-button-bar"></div>
+    {{ Form::textarea('body', Input::old('body'), array('id' => 'wmd-input', 'class' => 'wmd-input wmd-panel form-group form-control')) }}
+    {{ $errors->first('body', '<span class="help-block"><p class="text-warning">:message</p></span><br>') }}
+</div>
+
+<div class="form-group {{{ $errors->has('description') ? 'has-error' : '' }}}">
+    <div id="characterLeft" class="pull-right"></div>
+    {{ Form::label('description', 'Description') }}
+    {{ Form::textarea('description', Input::old('description'), array('rows' => '5', 'class' => 'form-control', 'maxlength' => '400')) }}
+    {{ $errors->first('description', '<span class="help-block"><p class="text-warning">:message</p></span><br>')}}
+</div>
 
 <div class="form-group {{{ $errors->has('title') ? 'has-error' : '' }}}">
     {{ Form::label('title', 'Title') }}
@@ -21,8 +30,7 @@
     {{ $errors->first('tag_list', '<span class="help-block">:message</span>') }}
 </div>
 
-<div class="form-group {{{ $errors->has('image') ? 'has-error' : '' }}}">
+<div class="form-group">
     {{ Form::label('image', 'Image') }}
-    {{ Form::file('image', array('class' => 'form-group')) }}
-    {{ $errors->first('image', '<span class="help-block"><p class="text-warning">:message</p></span><br>') }}
+    {{ Form::file('image', array('class' => '')) }}
 </div>

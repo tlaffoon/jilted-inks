@@ -37,7 +37,7 @@
                 <h5>by {{{ $post->user->username }}}</h5>
                 
                 <div class="post-body">
-                    {{ $post->renderBody(true) }}
+                    {{ $post->description }}
                 </div>
 
         </div>

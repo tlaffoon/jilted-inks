@@ -61,9 +61,6 @@ class PostsController extends \BaseController
     public function store()
     {
         $post = new Post();
-        
-        $post->user_id = Auth::id();
-        
         return $this->savePost($post);
     }
 
@@ -143,6 +140,7 @@ class PostsController extends \BaseController
         $rules = array(
                 'title' => 'required|max:100',
                 'body'  => 'required',
+                'description' => 'required',
                 'slug'  => 'required|unique:posts,slug,' . $post->id
         );
 
@@ -153,14 +151,15 @@ class PostsController extends \BaseController
             Log::info("User made a bad PostsController request", $input);
 
             Session::flash('errorMessage', 'Failed to save your post!');
-
             return Redirect::back()->withInput()->withErrors($validator);
         
         } else {
             
-            $post->title = Input::get('title');
-            $post->body  = Input::get('body');
-            $post->slug  = Input::get('slug');
+            $post->title        = Input::get('title');
+            $post->body         = Input::get('body');
+            $post->description  = Input::get('description');
+            $post->slug         = Input::get('slug');
+            $post->user_id      = Auth::id();            
             $post->save();
 
             if (Input::hasFile('image') && Input::file('image')->isValid())
