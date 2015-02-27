@@ -2,13 +2,12 @@
 
 use Carbon\Carbon;
 
-class Post extends Eloquent
+class Post extends \Eloquent
 {
     protected $table = 'posts';
 
     protected $imgDir = 'img-upload';
 
-    // Don't forget to fill this array
     protected $fillable = ['body', 'description', 'title', 'slug', 'tag_list', 'image'];
 
     // Builds relationship to user.
