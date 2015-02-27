@@ -4,11 +4,6 @@
 <link rel="stylesheet" type="text/css" href="/includes/css/pagedown.css" />
 <link rel="stylesheet" type="text/css" href="/includes/css/jquery.tagsinput.css" />
 <style type="text/css">
-    #description {
-         white-space: pre-wrap;
-    }
-</style>
-<style type="text/css">
     .preview {
         margin-top: 20px;
     }
@@ -17,7 +12,7 @@
 
 @section('content')
 
-<h1 class="page-header">
+<div class="page-header">
     @if (isset($post))
             <h2>Edit Post: {{{ $post->title }}}</h2>
         {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'class'=>'form', 'role'=>'form', 'method' => 'PUT', 'files' => true)) }}
@@ -25,7 +20,7 @@
             <h2>Create New Post</h2>
         {{ Form::open(array('action' => 'PostsController@store'), array('files' => true)) }}
     @endif
-</h1>
+</div>
 
 <div class="row">
 
@@ -36,7 +31,7 @@
         
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
         
-        {{ Form::submit('Create Post', array('class' => 'btn btn-primary pull-right')) }}
+        {{ Form::submit('Save', array('class' => 'btn btn-primary pull-right')) }}
     {{ Form::close() }}
 </div>
 
@@ -74,9 +69,6 @@ $(document).ready(function() {
     var $slug = $('#slug');
     var value;
 
-    var tags = [];
-    var tag;
-
     // Trigger callback function when title value changes
     title.on('change', function () {
         
@@ -86,37 +78,6 @@ $(document).ready(function() {
 
     });
     // End slug generation
-
-
-
-
-    // $('#addTagForm').on('submit', function (e) {
-    //     e.preventDefault();
-        
-    //     // grab tag value
-    //     tag = $('#addTagForm :input').val();
-
-    //     // sanitize that input
-    //     // ... 
-
-    //     // add to array
-    //     tags.push(tag);
-
-    //     // reset add tag from input value
-    //     $('#addTagForm :input').val('');
-
-    //     // Reset Tag Box
-    //     $('#tag-box').html('');
-
-    //     // Add Tag Values to Tag Box
-    //     for (var i = 0; i < tags.length; i++) {
-    //         $('#tag-box').append('<span class="badge">' + tags[i] + '</span>');
-    //     };
-
-    //     // Update Form Input w/Tags Array
-    //     $('#tag_list').val(tags);
-
-    // });
 
 });
 </script>

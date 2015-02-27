@@ -27,15 +27,30 @@
                 <td>{{{ $post->title }}}</td>
                 <td>{{{ $post->user->username }}}</td>
                 <td>
-                    <a href="{{{ action('PostsController@destroy', $post->id) }}}" class="btn btn-default btn-danger btn-block"><i class="fa fa-trash-o fa-2x"></i></a>
+                    <a href="#" class="btn btn-default btn-danger btn-block deletePost" data-postid="{{ $post->id }}"><i class="fa fa-trash-o fa-2x"></i></a>
                 </td>
             </tr>
             @endforeach
         </table>
 
+        <div class="text-center">
+            {{ $posts->links() }}
+        </div>
+
+        {{ Form::open(array('action' => 'PostsController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
+        {{ Form::close() }}
 
     </div>
 @stop
 
 @section('bottomscript')
+<script type="text/javascript">
+    $(".deletePost").click(function() {
+        var postID = $(this).data('postid');
+        $("#deleteForm").attr('action', '/posts/' + postID);
+        if (confirm("Are you sure you want to delete this post?")) {
+            $('#deleteForm').submit();
+        }
+    });
+</script>
 @stop
