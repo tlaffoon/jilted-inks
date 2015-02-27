@@ -8,6 +8,9 @@ class Post extends Eloquent
 
     protected $imgDir = 'img-upload';
 
+    // Don't forget to fill this array
+    protected $fillable = ['body', 'description', 'title', 'slug', 'tag_list', 'image'];
+
     // Builds relationship to user.
     public function user()
     {
