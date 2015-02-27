@@ -12,33 +12,41 @@
         <h2 class="page-header">
             Manage Your Posts
         </h2>
-    
-        <table class="table table-striped table-hover table-bordered">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th width="60">Delete?</th>
-            </tr>
+   
+        @if (count($posts) == 0)
+            <h4>No posts found.</h4>
+        @else
 
-            @foreach ($posts as $key => $post)
-            <tr>
-                <td>{{{ $post->id }}}</td>
-                <td>{{{ $post->title }}}</td>
-                <td>{{{ $post->user->username }}}</td>
-                <td>
-                    <a href="#" class="btn btn-default btn-danger btn-block deletePost" data-postid="{{ $post->id }}"><i class="fa fa-trash-o fa-2x"></i></a>
-                </td>
-            </tr>
-            @endforeach
-        </table>
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Author</th>
+                    <th width="60">Delete?</th>
+                </tr>
 
-        <div class="text-center">
-            {{ $posts->links() }}
-        </div>
+                @foreach ($posts as $key => $post)
+                <tr>
+                    <td>{{{ $post->id }}}</td>
+                    <td>{{{ $post->title }}}</td>
+                    <td>{{{ $post->slug }}}</td>
+                    <td>{{{ $post->user->username }}}</td>
+                    <td>
+                        <a href="#" class="btn btn-default btn-danger btn-block deletePost" data-postid="{{ $post->id }}"><i class="fa fa-trash-o fa-2x"></i></a>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
 
-        {{ Form::open(array('action' => 'PostsController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
-        {{ Form::close() }}
+            <div class="text-center">
+                {{ $posts->links() }}
+            </div>
+
+            {{ Form::open(array('action' => 'PostsController@destroy', 'id' => 'deleteForm', 'method' => 'DELETE')) }}
+            {{ Form::close() }}
+
+        @endif
 
     </div>
 @stop
