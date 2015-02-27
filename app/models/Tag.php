@@ -18,4 +18,12 @@ class Tag extends \Eloquent {
         $tag = self::where('name', '=', $id)->firstOrCreate();
         return $tag;
     }
+
+    /*
+     * Get all tags in the db.
+     */
+    public static function getAll()
+    {
+        return Tag::orderBy('name')->get();
+    }
 }
