@@ -50,7 +50,7 @@ class PostsController extends \BaseController
      */
     public function create()
     {
-        return View::make('posts.create');
+        return View::make('posts.create-edit');
     }
 
     /**
@@ -97,7 +97,7 @@ class PostsController extends \BaseController
             App::abort(404);
         }
 
-        return View::make('posts.edit')->with('post', $post);
+        return View::make('posts.create-edit')->with('post', $post);
     }
 
     /**
@@ -133,7 +133,7 @@ class PostsController extends \BaseController
 
         $post->delete();        
         
-        return Redirect::action('HomeController@showDashboard');
+        return Redirect::action('PostsController@showDashboard');
     }
 
     protected function savePost($post)
@@ -217,7 +217,7 @@ class PostsController extends \BaseController
             });
         }
         
-        $posts = $query->orderBy('created_at', 'desc')->paginate(4);
+        $posts = $query->orderBy('created_at', 'desc')->paginate(10);
         
         return View::make('posts.dashboard')->with('posts', $posts);
     }
