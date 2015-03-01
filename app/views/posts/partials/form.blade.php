@@ -6,7 +6,7 @@
 </div>
 
 <div class="form-group {{{ $errors->has('description') ? 'has-error' : '' }}}">
-    <div id="characterLeft" class="pull-right"></div>
+    <div id="characterLimit" class="pull-right"></div>
     {{ Form::label('description', 'Description') }}
     {{ Form::textarea('description', Input::old('description'), array('rows' => '5', 'class' => 'form-control', 'maxlength' => '400')) }}
     {{ $errors->first('description', '<span class="help-block"><p class="text-warning">:message</p></span><br>')}}

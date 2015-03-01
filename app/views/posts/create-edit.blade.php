@@ -25,7 +25,6 @@
 <div class="row">
 
 <div class="col-md-6">
-    {{ Form::open(array('action' => 'PostsController@store', 'files' => true)) }}
         
         @include('posts.partials.form')
         
@@ -36,7 +35,7 @@
 </div>
 
 <div class="col-md-6">
-    {{ Form::label('', 'Preview')}}
+    <label>Preview</label>
     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 </div>
 
@@ -80,10 +79,10 @@ $(document).ready(function() {
     // End slug generation
 
     // Limit characters in description field
-    var charLeft = $('#characterLeft');
+    var charLimit = $('#characterLimit');
     var descField = $('#description');
 
-    charLeft.text('400 characters left.');
+    charLimit.text('400 characters left.');
     descField.on("keyup focus", function () {
         var max = 400;
         var descValue = $(this).val().slice(0, max);
@@ -91,12 +90,12 @@ $(document).ready(function() {
 
         if (len >= max) {
             descField.val(descValue);
-            charLeft.addClass('text-danger');
-            charLeft.text('You have reached the character limit.');
+            charLimit.addClass('text-danger');
+            charLimit.text('You have reached the character limit.');
         } else {
             var ch = max - len;
-            charLeft.removeClass('text-danger');
-            charLeft.text(ch + ' characters left.');
+            charLimit.removeClass('text-danger');
+            charLimit.text(ch + ' characters left.');
         }
     });
 });
