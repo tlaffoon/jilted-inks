@@ -25,7 +25,6 @@
 <div class="row">
 
 <div class="col-md-6">
-    {{ Form::open(array('action' => 'PostsController@store', 'files' => true)) }}
         
         @include('posts.partials.form')
         
@@ -36,7 +35,7 @@
 </div>
 
 <div class="col-md-6">
-    {{ Form::label('', 'Preview')}}
+    <label>Preview</label>
     <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 </div>
 
@@ -82,13 +81,11 @@ $(document).ready(function() {
     // Limit characters in description field
     var charLeft = $('#characterLeft');
     var descField = $('#description');
-
     charLeft.text('400 characters left.');
     descField.on("keyup focus", function () {
         var max = 400;
         var descValue = $(this).val().slice(0, max);
         var len = $(this).val().length;
-
         if (len >= max) {
             descField.val(descValue);
             charLeft.addClass('text-danger');
@@ -99,6 +96,8 @@ $(document).ready(function() {
             charLeft.text(ch + ' characters left.');
         }
     });
+
 });
+
 </script>
 @stop
