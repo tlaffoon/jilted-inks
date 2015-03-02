@@ -5,12 +5,13 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 70px;
     margin-bottom: 70px;
 }
 
 .header-image {
     margin: 0 auto;
+    max-height: 300px;
 }
 
 .navbar-default {
@@ -56,10 +57,4 @@ body {
    width: 100%;
    background: #FFF;
    border-top: solid #eee 1px;
-}
-
-#shield {
-    position: relative;
-    right: 10px;
-    bottom: -5px;
 }
