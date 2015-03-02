@@ -43,6 +43,7 @@ class MessagesController extends \BaseController {
 	        $message = new Message();
 	        $message->name = Input::get('name');
 	        $message->email = Input::get('email');
+	        $message->phone = Input::get('phone');
 	        $message->subject = Input::get('subject');
 	        $message->content = Input::get('content');
 	        $message->save();
