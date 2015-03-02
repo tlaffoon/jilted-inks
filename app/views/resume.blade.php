@@ -22,7 +22,6 @@
     .job-box {
         margin-top: 20px;
     }
-
 </style>
 
 
@@ -311,4 +310,12 @@
 @stop
 
 @section('bottomscript')
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.box').hide();
+        $('.box').fadeDelay();
+
+    });
+</script>
 @stop

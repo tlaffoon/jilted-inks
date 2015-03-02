@@ -26,6 +26,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/includes/js/bootstrap.min.js"></script>
 
+    {{-- Custom Javascript --}}
+    <script src="/includes/js/custom.js"></script>
+
     @yield('topscript')
 
 </head>

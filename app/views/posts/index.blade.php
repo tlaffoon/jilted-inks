@@ -59,9 +59,22 @@
     </div>
 
 @endforeach
-<div class="text-center">
+
+<div class="text-center blog-links">
     <!-- Pager -->
     {{ $posts->appends(array('search' => Input::get('search')))->links() }}
 </div>
 
+@stop
+
+@section('bottomscript')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.blog-box').hide();
+        $('.blog-box').fadeDelay();
+
+        $('.blog-links').hide();
+        $('.blog-links').fadeDelay();
+    });
+</script>
 @stop
