@@ -24,9 +24,13 @@
         {{-- Header Image --}}
         <div class="col-md-3">
             @if(!empty($post->img_path))
-                <img class="img-responsive img-rounded" src="{{{ $post->img_path }}}" alt="">
+                <a href="{{{ action('PostsController@show', $post->slug) }}}">
+                    <img class="img-responsive img-rounded" src="{{{ $post->img_path }}}" alt="">
+                </a>
             @else
-                <img class="img-responsive img-rounded" src="http://placehold.it/200x200" alt="">
+                <a href="{{{ action('PostsController@show', $post->slug) }}}">
+                    <img class="img-responsive img-rounded" src="http://placehold.it/200x200" alt="">
+                </a>
             @endif
         </div>
 
