@@ -7,16 +7,22 @@
 
 <div class="col-md-6 col-md-offset-3">
     <h3 class="page-header"> Send A Message! </h3>
+    <p>Please enter your contact information below:</p>
 
         {{ Form::open(array('action' => 'HomeController@sendEmail')) }}
 
-            {{ Form::label('name', 'Your Name') }}
+            {{ Form::label('name', 'Name') }}
             {{ Form::text('name', Input::old('name'), array('placeholder' => 'Name', 'class' => 'form-group form-control')) }}
             {{ $errors->first('name', '<span class="help-block text-warning">:message</span><br>') }}
 
-            {{ Form::label('email', 'Your Email')}}
+            {{ Form::label('email', 'Email')}}
             {{ Form::text('email', Input::old('email'), array('placeholder' => 'Email', 'class' => 'form-group form-control')) }}
             {{ $errors->first('email', '<span class="help-block text-warning">:message</span><br>') }}
+
+            {{ Form::label('phone', 'Phone')}}
+            <div class="text-muted pull-right"><small>This field is optional.</small></div>
+            {{ Form::text('phone', Input::old('phone'), array('placeholder' => 'Phone', 'class' => 'form-group form-control')) }}
+            {{ $errors->first('phone', '<span class="help-block text-warning">:message</span><br>') }}
 
             {{ Form::label('subject', 'Subject')}}
             {{ Form::text('subject', Input::old('subject'), array('placeholder' => 'Subject', 'class' => 'form-group form-control')) }}
