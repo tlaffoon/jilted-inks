@@ -27,6 +27,7 @@
         <div class="header">
             <h4>From: <strong>{{ $name }}</strong></h4>
             <h4>Email: <strong>{{ $email }}</strong></h4>
+            <h4>Phone: <strong>{{ $phone }}</strong> </h4>
         </div>
         
 

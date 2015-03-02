@@ -62,6 +62,7 @@ class HomeController extends \BaseController {
 		    $message = new Message();
 		    $message->name = Input::get('name');
 		    $message->email = Input::get('email');
+		    $message->phone = Input::get('phone');
 		    $message->content = Input::get('content');
 		    $message->save();
 
