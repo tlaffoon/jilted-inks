@@ -12,5 +12,5 @@ class Message extends \Eloquent {
         'honey_pot' => 'honey_pot'
     );
     
-    protected $fillable = ['name', 'email', 'subject', 'content', 'honey_pot'];
+    protected $fillable = ['name', 'email', 'phone', 'subject', 'content', 'honey_pot'];
 }
