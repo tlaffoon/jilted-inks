@@ -57,5 +57,15 @@
         </div>
     </div>
 </div>
+@stop
 
+@section('bottomscript')
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $("img").hide();
+        $("img").fadeDelay();
+
+    });
+</script>
 @stop
