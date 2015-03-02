@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="page-header"><h1>Blog Posts</h1></div>
+<div class="page-header"><h1>Recent Posts</h1></div>
 
 @if(count($posts) == 0)
 
