@@ -47,6 +47,11 @@ class HomeController extends \BaseController {
 		return Redirect::action('HomeController@showHome');
 	}
 
+	public function showCalendar() {
+		$calendar = Calendar::make();
+		return View::make('calendar')->with('calendar', $calendar);
+	}
+
 	public function sendEmail() {
 
 		// Get all the input and store it inside variable.

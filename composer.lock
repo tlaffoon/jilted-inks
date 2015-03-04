@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0656776f5e1da700ef2958aa548270c6",
+    "hash": "e42ab56430a5380c0919c6790838be2a",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -56,16 +56,16 @@
         },
         {
             "name": "bogardo/mailgun",
-            "version": "v3.1.5",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Bogardo/Mailgun.git",
-                "reference": "f032e54d43308cf734e02436a50f5769e4ea2f1a"
+                "reference": "d70b583a06a34bf0da092dd19191da4699f17ac2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bogardo/Mailgun/zipball/f032e54d43308cf734e02436a50f5769e4ea2f1a",
-                "reference": "f032e54d43308cf734e02436a50f5769e4ea2f1a",
+                "url": "https://api.github.com/repos/Bogardo/Mailgun/zipball/d70b583a06a34bf0da092dd19191da4699f17ac2",
+                "reference": "d70b583a06a34bf0da092dd19191da4699f17ac2",
                 "shasum": ""
             },
             "require": {
@@ -76,8 +76,8 @@
             },
             "type": "laravel-package",
             "autoload": {
-                "psr-0": {
-                    "Bogardo\\Mailgun\\": "src/"
+                "psr-4": {
+                    "Bogardo\\Mailgun\\": "src/Bogardo/Mailgun/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -96,7 +96,7 @@
                 "mail",
                 "mailgun"
             ],
-            "time": "2015-01-04 21:50:15"
+            "time": "2015-02-26 22:18:52"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -147,25 +147,23 @@
         },
         {
             "name": "d11wtq/boris",
-            "version": "v1.0.8",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/d11wtq/boris.git",
-                "reference": "125dd4e5752639af7678a22ea597115646d89c6e"
+                "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/d11wtq/boris/zipball/125dd4e5752639af7678a22ea597115646d89c6e",
-                "reference": "125dd4e5752639af7678a22ea597115646d89c6e",
+                "url": "https://api.github.com/repos/d11wtq/boris/zipball/31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
+                "reference": "31055b15e2d3fe47f31f6aa8e277f8f3fc7eb483",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
-            },
-            "suggest": {
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "ext-readline": "*"
+                "ext-readline": "*",
+                "php": ">=5.3.0"
             },
             "bin": [
                 "bin/boris"
@@ -177,7 +175,11 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2014-01-17 12:21:18"
+            "license": [
+                "MIT"
+            ],
+            "description": "A tiny, but robust REPL (Read-Evaluate-Print-Loop) for PHP.",
+            "time": "2015-03-01 08:05:19"
         },
         {
             "name": "erusev/parsedown",
@@ -838,6 +840,46 @@
             "time": "2014-11-19 22:31:03"
         },
         {
+            "name": "makzumi/calendar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/makzumi/laravel-calendar.git",
+                "reference": "bcd70f10d852ca4d69d644ad27a68f5100d5b8dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/makzumi/laravel-calendar/zipball/bcd70f10d852ca4d69d644ad27a68f5100d5b8dc",
+                "reference": "bcd70f10d852ca4d69d644ad27a68f5100d5b8dc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [],
+                "psr-0": {
+                    "Makzumi\\Calendar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Ammar Almakzumi",
+                    "email": "info@makzumi.com"
+                }
+            ],
+            "description": "Laravel 4 Flexible Calendar",
+            "keywords": [
+                "calendar",
+                "events",
+                "laravel"
+            ],
+            "time": "2015-01-24 07:50:42"
+        },
+        {
             "name": "mews/purifier",
             "version": "dev-master",
             "source": {
@@ -957,16 +999,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.14.0",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e"
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
-                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
+                "reference": "9b7665041754eaa9bb2622349bc9adbc1cf61cb8",
                 "shasum": ""
             },
             "require": {
@@ -993,13 +1035,13 @@
                 }
             ],
             "description": "A simple API extension for DateTime.",
-            "homepage": "https://github.com/briannesbitt/Carbon",
+            "homepage": "http://carbon.nesbot.com",
             "keywords": [
                 "date",
                 "datetime",
                 "time"
             ],
-            "time": "2015-02-06 05:07:29"
+            "time": "2015-03-04 04:50:11"
         },
         {
             "name": "nikic/php-parser",
@@ -2444,6 +2486,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "mews/purifier": 20,
+        "makzumi/calendar": 20,
         "artdarek/oauth-4-laravel": 20
     },
     "prefer-stable": false,
