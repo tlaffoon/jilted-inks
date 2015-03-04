@@ -123,7 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Bogardo\Mailgun\MailgunServiceProvider',
-		// 'Artdarek\OAuth\OAuthServiceProvider'
+		'Makzumi\Calendar\CalendarServiceProvider',
+		// 'Artdarek\OAuth\OAuthServiceProvider',
 	),
 
 	/*
