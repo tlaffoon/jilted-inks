@@ -49,6 +49,8 @@ class HomeController extends \BaseController {
 
 	public function showCalendar() {
 		$calendar = Calendar::make();
+		$calendar->showNav(true);
+
 		return View::make('calendar')->with('calendar', $calendar);
 	}
 

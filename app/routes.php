@@ -10,9 +10,125 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
 Route::get('/', 'HomeController@showHome');
 
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('login',  'HomeController@showLogin');
+Route::post('login', 'HomeController@doLogin');
+Route::get('logout', 'HomeController@doLogout');
+
+
+/*
+|--------------------------------------------------------------------------
+| Main View Routes
+|--------------------------------------------------------------------------
+*/
+
+//  -- Move to home controller.
+
+Route::get('/resume', function() {
+    return View::make('resume');
+});
+
+Route::get('/portfolio', function() {
+    return View::make('portfolio');
+});
+
+Route::get('/contact', function() {
+    return View::make('contact');
+});
+
+Route::post('/contact', 'HomeController@sendEmail');
+
+Route::get('search', function() {
+    return View::make('maps.search');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Reservation Calendar Routes
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/calendar', 'HomeController@showCalendar');
+
+
+/*
+|--------------------------------------------------------------------------
+| Google Maps Demo Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/gmaps', 'HomeController@showGmaps');
+Route::get('/gmaps/geolocate', 'HomeController@showGeolocate');
+
+Route::get('/gmaps/autocomplete', 'HomeController@showAutocomplete');
+Route::post('/gmaps/autocomplete', 'HomeController@storeAddress');
+
+Route::get('/gmaps/geocode', 'HomeController@showGeocode');
+
+Route::get('/gmaps/markers', 'HomeController@showMarkers');
+
+Route::get('/gmaps/ajax', 'HomeController@showAjax');
+
+Route::post('/gmaps/ajax', function() {
+    $addresses = Address::all();
+    return Response::json($addresses);
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Tag Routes
+|--------------------------------------------------------------------------
+*/
+
+//  -- Move to tag controller.
+
+Route::post('/addTag', function() {
+    
+    $post = Post::findPost(Input::get('post_id'));
+    $tag = Input::get('tag');
+
+    return Response::json(array($post, $tag));
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/dashboard', 'PostsController@showDashboard');
+Route::post('/dashboard', function() {
+    return View::make('posts.dashboard');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Resourceful Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::resource('addresses', 'AddressesController');
+Route::resource('messages', 'MessagesController');
+Route::resource('posts', 'PostsController');
+Route::resource('profiles', 'ProfilesController');
+Route::resource('reservations', 'ReservationsController');
+Route::resource('tags', 'TagsController');    
+Route::resource('users', 'UsersController');
+
+
+// Extra trash.
 
 // Route::get('alt-index', function() {
 //     $query = Post::with('user');
@@ -39,66 +155,3 @@ Route::get('/calendar', 'HomeController@showCalendar');
     
 //     return View::make('posts.alt-index')->with('posts', $posts);
 // });
-
-Route::get('login',  'HomeController@showLogin');
-Route::post('login', 'HomeController@doLogin');
-Route::get('logout', 'HomeController@doLogout');
-
-// Gmaps Routes.
-Route::get('/gmaps', 'HomeController@showGmaps');
-Route::get('/gmaps/geolocate', 'HomeController@showGeolocate');
-
-Route::get('/gmaps/autocomplete', 'HomeController@showAutocomplete');
-Route::post('/gmaps/autocomplete', 'HomeController@storeAddress');
-
-Route::get('/gmaps/geocode', 'HomeController@showGeocode');
-
-Route::get('/gmaps/markers', 'HomeController@showMarkers');
-
-Route::get('/gmaps/ajax', 'HomeController@showAjax');
-
-Route::post('/gmaps/ajax', function() {
-    $addresses = Address::all();
-    return Response::json($addresses);
-});
-
-// Random views.
-Route::get('/resume', function() {
-    return View::make('resume');
-});
-
-Route::get('/portfolio', function() {
-    return View::make('portfolio');
-});
-
-Route::get('/contact', function() {
-    return View::make('contact');
-});
-
-Route::post('/contact', 'HomeController@sendEmail');
-
-Route::get('search', function() {
-    return View::make('maps.search');
-});
-
-Route::post('/addTag', function() {
-    
-    $post = Post::findPost(Input::get('post_id'));
-    $tag = Input::get('tag');
-
-    return Response::json(array($post, $tag));
-});
-
-// Dashboard routes.
-Route::get('/dashboard', 'PostsController@showDashboard');
-Route::post('/dashboard', function() {
-    return View::make('posts.dashboard');
-});
-
-// Resource routes.
-Route::resource('addresses', 'AddressesController');
-Route::resource('messages', 'MessagesController');
-Route::resource('posts', 'PostsController');
-Route::resource('profiles', 'ProfilesController');
-Route::resource('users', 'UsersController');
-Route::resource('tags', 'TagsController');    
