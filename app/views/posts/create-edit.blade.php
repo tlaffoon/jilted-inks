@@ -24,45 +24,47 @@
 
 <div class="row">
 
-<div class="col-md-6">
+    <div class="col-md-10">
         
         @include('posts.partials.form')
-        
+            
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
-        
+            
         {{ Form::submit('Save', array('class' => 'btn btn-primary pull-right')) }}
-    {{ Form::close() }}
-</div>
-
-<div class="col-md-6">
-    <label>Preview</label>
-    <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
-</div>
+        {{ Form::close() }}
+    </div>
 
 </div>
 
 @stop
 
 @section('bottomscript')
-<script type="text/javascript" src="/includes/js/Markdown.Converter.js"></script>
-<script type="text/javascript" src="/includes/js/Markdown.Sanitizer.js"></script>
-<script type="text/javascript" src="/includes/js/Markdown.Editor.js"></script>
+
+<script type="text/javascript" src="/includes/tinymce/tinymce.min.js"></script>
 <script type="text/javascript" src="/includes/js/jquery.tagsinput.js"></script>
 
 <script type="text/javascript">
+
+</script>
+
+
+<script type="text/javascript">
 $(document).ready(function() {
-
-    // WMD WSIWYG Editor
-    (function () {
-        // init the markdown editor and preview
-        var converter = Markdown.getSanitizingConverter();
-        var editor = new Markdown.Editor(converter);
-        editor.run();
-
-        // init tag editor
-        $('#txtTags').tagsInput();
-    })();
     
+    // TinyMCE Initialization
+    tinymce.init({
+        selector: "#wysiwyg",
+        plugins: [
+            "advlist autolink lists link image charmap preview anchor",
+            "searchreplace visualblocks code",
+            "insertdatetime media table contextmenu paste"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    });
+
+    // init tag editor
+    $('#txtTags').tagsInput();
+
     // Handle slug generation
     var title = $('#title');
     var $slug = $('#slug');
