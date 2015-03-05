@@ -122,9 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Bogardo\Mailgun\MailgunServiceProvider',
-		'Makzumi\Calendar\CalendarServiceProvider',
-		// 'Artdarek\OAuth\OAuthServiceProvider',
+		'Bogardo\Mailgun\MailgunServiceProvider'
 	),
 
 	/*
@@ -191,8 +189,6 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		// 'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
-
 	),
 
 );
