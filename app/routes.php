@@ -72,5 +72,6 @@ Route::resource('addresses', 'AddressesController');
 Route::resource('messages', 'MessagesController');
 Route::resource('posts', 'PostsController');
 Route::resource('profiles', 'ProfilesController');
-Route::resource('users', 'UsersController');
+Route::resource('series', 'SeriesController');
 Route::resource('tags', 'TagsController');    
+Route::resource('users', 'UsersController');
