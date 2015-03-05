@@ -12,34 +12,6 @@
 */
 Route::get('/', 'HomeController@showHome');
 
-Route::get('/calendar', 'HomeController@showCalendar');
-
-// Route::get('alt-index', function() {
-//     $query = Post::with('user');
-    
-//     if (Input::has('search')) {
-//         $search = '%' . Input::get('search') . '%';
-        
-//         $query->where('title', 'like', $search);
-        
-//         $query->orWhereHas('user', function($q) {
-//             $search = '%' . Input::get('search') . '%';
-            
-//             $q->where('email', 'like', $search);
-//         });
-
-//         $query->orWhereHas('tags', function($q) {
-//             $search = '%' . Input::get('search') . '%';
-            
-//             $q->where('name', 'like', $search);
-//         });
-//     }
-    
-//     $posts = $query->orderBy('created_at', 'desc')->paginate(4);
-    
-//     return View::make('posts.alt-index')->with('posts', $posts);
-// });
-
 Route::get('login',  'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('logout', 'HomeController@doLogout');
