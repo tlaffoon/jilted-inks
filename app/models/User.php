@@ -44,6 +44,13 @@ class User extends \BaseModel implements UserInterface, RemindableInterface {
 		return $this->hasMany('Post');
 	}
 
+	// // Builds relationship between this user and their assigned manager.
+	// public function manager() {
+	// 	return $this->belongsTo('User', 'user_id');
+	// }
 
-	
+	// // Builds relationship between this user and any users which are managed by them.
+	// public function employees() {
+	// 	return $this->hasMany('User', 'user_id');
+	// }
 }

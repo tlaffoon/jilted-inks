@@ -11,6 +11,13 @@ class PostsController extends \BaseController
         $this->beforeFilter('auth', array('except' => array('index', 'show')));
     }
 
+
+    public function showSitemap() {
+        $posts = Post::where('post_id', '=', null)->orderBy('title')->get();
+        return View::make('sitemap')->with('posts', $posts);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

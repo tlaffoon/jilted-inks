@@ -1,4 +1,4 @@
 # Development Blog
 
-Development Blog is under development.
+Development Blog is under development..
 

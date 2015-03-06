@@ -12,6 +12,8 @@
 */
 Route::get('/', 'HomeController@showHome');
 
+Route::get('/sitemap', 'PostsController@showSitemap');
+
 Route::get('login',  'HomeController@showLogin');
 Route::post('login', 'HomeController@doLogin');
 Route::get('logout', 'HomeController@doLogout');
