@@ -22,6 +22,38 @@ class Post extends \Eloquent
         return $this->belongsToMany('Tag');
     }
 
+    // Builds relationship to parent post.
+    public function parent() {
+        return $this->belongsTo('Post', 'post_id');
+    }
+
+    // Builds relationship to child posts.
+    public function children() {
+        return $this->hasMany('Post');
+    }
+
+    // public function generatePostList($posts) {
+        
+    //     foreach ($posts as $post) {
+    //         $html = "<ul>";
+    //         $html += "<li>" . $post->title;
+
+    //         $html += generateList($post->children);
+
+    //         $html += "</li>";
+
+    //         $html += "</ul>";
+    //     }
+
+    //     return $html;
+    // }
+
+    // public static function generateSiteMap() {
+    //     $posts = Post::where('post_id', '=', null)->orderBy('title')->get();
+    //     $html = generatePostList($posts);
+    //     return $html;
+    // }
+
     // Setter for title.
     public function setTitleAttribute($value)
     {
