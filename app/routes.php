@@ -61,6 +61,8 @@ Route::post('/addTag', function() {
     return Response::json(array($post, $tag));
 });
 
+Route::post('/addSeries', 'SeriesController@storeModal');
+
 // Dashboard routes.
 Route::get('/dashboard', 'PostsController@showDashboard');
 Route::post('/dashboard', function() {

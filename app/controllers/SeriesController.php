@@ -44,6 +44,25 @@ class SeriesController extends \BaseController {
 	}
 
 	/**
+	 * Store a newly created series in storage.
+	 *
+	 * @return Response
+	 */
+	public function storeModal()
+	{
+		$validator = Validator::make($data = Input::all(), Series::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		Series::create($data);
+
+		return Redirect::back()->withInput();
+	}
+
+	/**
 	 * Display the specified series.
 	 *
 	 * @param  int  $id

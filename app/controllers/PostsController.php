@@ -166,7 +166,6 @@ class PostsController extends \BaseController
 
             if (Input::has('series')) {
                 $post->series_id = Input::get('series');
-                // $post->order ...
             }
 
             $post->save();

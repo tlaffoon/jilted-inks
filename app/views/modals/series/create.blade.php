@@ -8,7 +8,8 @@
       </div>
       <div class="modal-body">
 
-        {{ Form::open(array('action' => 'HomeController@doSeries')) }}
+        {{ Form::open(array('action' => 'SeriesController@storeModal')) }}
+            
             <div class="form-group">
                 {{ Form::label('name', 'Name') }}
                 {{ Form::text('name', null, array('class' => 'form-control')) }}
@@ -18,6 +19,7 @@
                 {{ Form::label('description', 'Description') }}
                 {{ Form::text('description', null, array('class' => 'form-control')) }}
             </div>
+            
       </div>
       <div class="modal-footer">
         {{ Form::submit('Save', array('class' => 'btn btn-default  pull-right')) }}

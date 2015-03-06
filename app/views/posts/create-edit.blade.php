@@ -1,13 +1,7 @@
 @extends('layouts.awesome')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="/includes/css/pagedown.css" />
 <link rel="stylesheet" type="text/css" href="/includes/css/jquery.tagsinput.css" />
-<style type="text/css">
-    .preview {
-        margin-top: 20px;
-    }
-</style>
 @stop
 
 @section('content')
@@ -24,16 +18,35 @@
 
 <div class="row">
 
-    <div class="col-md-12">
+    <div class="col-md-8">
         
         @include('posts.partials.form')
             
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
             
         {{ Form::submit('Save', array('class' => 'btn btn-primary pull-right')) }}
+        {{ Form::close() }}
+        
     </div>
 
-{{ Form::close() }}
+    <div class="col-md-4">
+        {{-- Display post series information if applicable --}}
+        @if(isset($post) && $post->series != '')
+            <a href="{{{ action('SeriesController@edit', $post->series->id) }}}" class="btn btn-default btn-xs pull-right"> <i class="fa fa-edit"></i></a>
+            <p> Number #{{{ $post->order }}} in "<a href="{{{ action('SeriesController@show', $post->series->id) }}}">{{ $post->series->name }}</a>" series.</p>
+        @else
+            {{ Form::label('series', 'Assign to post series?') }}
+            <span class="pull-right">
+                <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#seriesCreateModal"> <i class="fa fa-plus"></i></button>
+            </span>
+
+            {{ Form::select('series', array('default' => Input::old('series')) + $series, 'default', array('class' => 'form-group form-control')) }}
+
+            @include('modals.series.create')
+
+        @endif
+    </div>
+
 </div>
 
 @stop
