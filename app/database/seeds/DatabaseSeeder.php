@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder {
 		
         DB::table('roles')->delete();
         DB::table('users')->delete();
+        DB::table('series')->delete();
 
         $this->call('RolesTableSeeder');
 		$this->call('UserTableSeeder');
-		// $this->call('PostTableSeeder');
-        // $this->call('TagsTableSeeder');
+		$this->call('SeriesTableSeeder');
 	}
 }

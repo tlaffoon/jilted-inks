@@ -11,6 +11,11 @@ class Series extends \Eloquent {
 	// Don't forget to fill this array
 	protected $fillable = ['name', 'description'];
 
+    // Setter for name.
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = ucfirst($value);
+    }
 
     // Build relationship between one series and multiple posts.
     public function posts() {

@@ -164,7 +164,7 @@ class PostsController extends \BaseController
             $post->slug         = Input::get('slug');
             $post->user_id      = Auth::id();
 
-            if (Input::has('series')) {
+            if (Input::get('series') != 'default') {
                 $post->series_id = Input::get('series');
             }
 

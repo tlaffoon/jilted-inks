@@ -25,7 +25,6 @@
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
             
         {{ Form::submit('Save', array('class' => 'btn btn-primary pull-right')) }}
-        {{ Form::close() }}
         
     </div>
 
@@ -36,16 +35,17 @@
             <p> Number #{{{ $post->order }}} in "<a href="{{{ action('SeriesController@show', $post->series->id) }}}">{{ $post->series->name }}</a>" series.</p>
         @else
             {{ Form::label('series', 'Assign to post series?') }}
-            <span class="pull-right">
+            {{-- <span class="pull-right">
                 <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#seriesCreateModal"> <i class="fa fa-plus"></i></button>
-            </span>
+            </span> --}}
 
-            {{ Form::select('series', array('default' => Input::old('series')) + $series, 'default', array('class' => 'form-group form-control')) }}
+            {{ Form::select('series', array('default' => 'Select Series...') + $series, 'default', array('class' => 'form-group form-control')) }}
 
-            @include('modals.series.create')
+            {{-- @include('modals.series.create') --}}
 
         @endif
     </div>
+    {{ Form::close() }}
 
 </div>
 
