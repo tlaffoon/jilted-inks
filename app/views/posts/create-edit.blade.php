@@ -24,16 +24,16 @@
 
 <div class="row">
 
-    <div class="col-md-10">
+    <div class="col-md-12">
         
         @include('posts.partials.form')
             
         <a href="{{{ action('PostsController@index') }}}" class="btn btn-default">Cancel</a>
             
         {{ Form::submit('Save', array('class' => 'btn btn-primary pull-right')) }}
-        {{ Form::close() }}
     </div>
 
+{{ Form::close() }}
 </div>
 
 @stop
