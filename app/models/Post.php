@@ -32,6 +32,62 @@ class Post extends \Eloquent
         return $this->hasMany('Post');
     }
 
+    // This function will generate an html list containing its name, and it's children posts.
+    public function childList($post) {
+        $html = '';
+            $html .= '<ul>';
+                $html .= '<li>';
+                    $html .= "<a href='/posts/" . $post->slug . "'>" . $post->title . "</a>";
+
+                    // Recursively call this function to get lists of this post's children.
+                    foreach ($post->children as $child) {
+                        $html .= $child->childList($child);
+                    }
+
+                $html .= '</li>';
+            $html .= '</ul>';
+        $html .= '';
+
+        return "$html";
+    }
+
+
+    // public static function generateChildList($post) {
+
+    //     $html = '';
+
+    //     foreach ($post->children->toArray() as $child) {
+    //         $html += '<ul>';
+    //             $html += '<li>';
+    //                 $html +=  $child->title;
+    //             $html += '</li>';
+    //         $html += '</ul>';
+
+    //     }
+
+    //     return "$html";
+    // }
+
+    // public function postList() {
+        
+    //     $post = Post::findOrFail($this->id);
+
+    //     $html = '';
+        
+    //     $html += '<ul>';
+    //         $html += '<li>';
+    //             $html +=  $post->title ;
+
+    //             foreach ($post->children as $child) {
+    //                 $html += $this->postList($child);
+    //             }
+
+    //         $html += '</li>';
+    //     $html += '</ul>';
+
+    //     return $html;
+    // }
+
     // public function generatePostList($posts) {
         
     //     foreach ($posts as $post) {

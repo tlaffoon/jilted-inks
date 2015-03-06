@@ -12,8 +12,9 @@ class PostsController extends \BaseController
     }
 
 
-    public function showSitemap(){
-        return View::make('sitemap');
+    public function showSitemap() {
+        $posts = Post::where('post_id', '=', null)->orderBy('title')->get();
+        return View::make('sitemap')->with('posts', $posts);
     }
 
 

@@ -13,7 +13,24 @@
 
         <h3 class="page-header">Sitemap</h3>
 
-        {{ Post::generateSiteMap() }}
+        @foreach ($posts as $post)
+            {{ $post->childList($post) }}
+        @endforeach
+
+
+        {{--  Doesn't recurse --}}
+{{--         @foreach ($posts as $post)
+            <ul>
+                <li>
+                    <a href="{{{ action('PostsController@show', $post->id) }}}"></a> {{ $post->title }}
+                        @foreach($post->children as $child)
+                            <ul>
+                                <li><a href="{{{ action('PostsController@show', $post->id) }}}"></a> {{ $post->title }}</li>
+                            </ul>
+                        @endforeach
+                </li>
+            </ul>
+        @endforeach --}}
 
     </div>
 </div>
