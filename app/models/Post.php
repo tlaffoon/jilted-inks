@@ -16,6 +16,12 @@ class Post extends \Eloquent
         return $this->belongsTo('User');
     }
 
+    // Builds relationship to series.
+    public function series() 
+    {
+        return $this->belongsTo('Series');
+    }
+
     // Builds relationship to tags.
     public function tags()
     {
