@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration {
             $table->string('slug')->unique();
             $table->text('body');
             $table->text('description');
-            $table->text('img_path');
+            $table->text('img_path')->nullable();
             $table->timestamps();
 
             $table->integer('user_id')->unsigned();
