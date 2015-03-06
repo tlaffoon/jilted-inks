@@ -50,7 +50,8 @@ class PostsController extends \BaseController
      */
     public function create()
     {
-        return View::make('posts.create-edit');
+        $series = Series::lists('name', 'id');
+        return View::make('posts.create-edit')->with('series', $series);
     }
 
     /**
@@ -94,7 +95,9 @@ class PostsController extends \BaseController
             App::abort(404);
         }
 
-        return View::make('posts.create-edit')->with('post', $post);
+        $series = Series::lists('name', 'id');
+
+        return View::make('posts.create-edit')->with('post', $post)->with('series', $series);
     }
 
     /**
@@ -159,7 +162,13 @@ class PostsController extends \BaseController
             $post->body         = Input::get('body');
             $post->description  = Input::get('description');
             $post->slug         = Input::get('slug');
-            $post->user_id      = Auth::id();            
+            $post->user_id      = Auth::id();
+
+            if (Input::has('series')) {
+                $post->series_id = Input::get('series');
+                // $post->order ...
+            }
+
             $post->save();
 
             if (Input::hasFile('image') && Input::file('image')->isValid())
