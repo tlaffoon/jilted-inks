@@ -12,6 +12,8 @@
 */
 Route::get('/', 'HomeController@showHome');
 
+Route::get('/coderbyte', 'HomeController@showCoderbyte');
+
 Route::get('/sitemap', 'PostsController@showSitemap');
 
 Route::get('login',  'HomeController@showLogin');
