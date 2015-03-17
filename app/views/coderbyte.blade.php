@@ -49,30 +49,38 @@
 
 @section('content')
 
-@include('partials.affixed-nav-list')
+    @include('partials.affixed-nav-list')
 
-<h2 class="page-header">CoderByte Challenges</h2>
+    <h2 class="page-header">CoderByte Challenges</h2>
 
-{{-- Capitalize Letters --}}
-@include('coderbyte.capitalize-letters')
+    {{-- Capitalize Letters --}}
+    @include('coderbyte.capitalize-letters')
 
-{{-- First Factorial --}}
-@include('coderbyte.first-factorial')
+    {{-- Check Nums --}}
+    @include('coderbyte.checknums')
 
-{{-- Array Addition --}}
-@include('coderbyte.array-addition')
+    {{-- First Factorial --}}
+    @include('coderbyte.first-factorial')
 
-{{-- Caesar Cipher --}}
-@include('coderbyte.caesar-cipher')
+    {{-- Array Addition --}}
+    @include('coderbyte.array-addition')
+
+    {{-- Time Convert --}}
+    @include('coderbyte.time-convert')
+
+    {{-- Caesar Cipher --}}
+    @include('coderbyte.caesar-cipher')
 
 @stop
 
 @section('bottomscript')
 
+<script src="/includes/coderbyte/capitalize_letters.js"></script>
+<script src="/includes/coderbyte/checknums.js"></script>
 <script src="/includes/coderbyte/first_factorial.js"></script>
 <script src="/includes/coderbyte/caesar_cipher.js"></script>
 <script src="/includes/coderbyte/array_addition.js"></script>
-<script src="/includes/coderbyte/capitalize_letters.js"></script>
+<script src="/includes/coderbyte/time_convert.js"></script>
 
 <script type="text/javascript">
 
