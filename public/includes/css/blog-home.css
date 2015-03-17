@@ -1,12 +1,7 @@
-/*!
- * Start Bootstrap - Blog Home HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
     padding-top: 70px;
     margin-bottom: 70px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .header-image {
@@ -15,8 +10,8 @@ body {
 }
 
 .navbar-default {
-  background-color: #fff;
-  border-color: #eee;
+    background-color: #fff;
+    border-color: #eee;
 }
 
 .blog-box {
@@ -27,7 +22,7 @@ body {
 }
 
 .blog-title {
-  color: #333;
+    color: #333;
 }
 
 .img-bordered {
@@ -50,11 +45,11 @@ body {
 }
 
 #footer {
-   position: fixed;
-   left: 0px;
-   bottom: 0px;
-   height: 35px;
-   width: 100%;
-   background: #FFF;
-   border-top: solid #eee 1px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 35px;
+    width: 100%;
+    background: #FFF;
+    border-top: solid #eee 1px;
 }
