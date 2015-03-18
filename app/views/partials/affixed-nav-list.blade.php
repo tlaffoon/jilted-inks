@@ -10,9 +10,9 @@
             <li> 
                 <a href="#longest-word">Longest Word</a>
             </li>
-            {{-- <li> 
+            <li> 
                 <a href="#letter-changes">Letter Changes</a>
-            </li> --}}
+            </li>
             {{-- <li> 
                 <a href="#simple-adding">Simple Adding</a>
             </li> --}}

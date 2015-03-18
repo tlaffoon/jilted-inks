@@ -86,6 +86,9 @@
         {{-- Longest Word --}}
         @include('coderbyte.longest-word')
 
+        {{-- Letter Changes --}}
+        @include('coderbyte.letter-changes')
+
         {{-- Capitalize Letters --}}
         @include('coderbyte.capitalize-letters')
 
@@ -119,6 +122,7 @@
 <script src="/includes/coderbyte/first_reverse.js"></script>
 <script src="/includes/coderbyte/first_factorial.js"></script>
 <script src="/includes/coderbyte/longest_word.js"></script>
+<script src="/includes/coderbyte/letter_changes.js"></script>
 <script src="/includes/coderbyte/capitalize_letters.js"></script>
 <script src="/includes/coderbyte/checknums.js"></script>
 <script src="/includes/coderbyte/array_addition.js"></script>
