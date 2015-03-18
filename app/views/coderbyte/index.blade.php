@@ -21,6 +21,11 @@
         text-decoration: underline;
     }
 
+    .section-header {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
     .stringOutput {
         text-indent: 10px;
         font-size: 24px;
@@ -70,6 +75,7 @@
     <h2 class="page-header">CoderByte Challenges</h2>
 
     {{-- Simple --}}
+    <h4 class="underline section-header">Simple</h4>
 
         {{-- First Reverse --}}
         @include('coderbyte.first-reverse')
@@ -77,20 +83,25 @@
         {{-- First Factorial --}}
         @include('coderbyte.first-factorial')
 
+        {{-- Longest Word --}}
+        @include('coderbyte.longest-word')
+
         {{-- Capitalize Letters --}}
         @include('coderbyte.capitalize-letters')
 
         {{-- Check Nums --}}
         @include('coderbyte.checknumbers')
 
-        {{-- Array Addition --}}
-        @include('coderbyte.array-addition')
-
         {{-- Time Convert --}}
         @include('coderbyte.time-convert')
 
+        {{-- Array Addition --}}
+        @include('coderbyte.array-addition')
+
+
 
     {{-- Intermediate --}}
+    <h4 class="underline section-header">Intermediate</h4>
 
         {{-- Caesar Cipher --}}
         @include('coderbyte.caesar-cipher')
@@ -107,6 +118,7 @@
 {{-- Include External JS Resources --}}
 <script src="/includes/coderbyte/first_reverse.js"></script>
 <script src="/includes/coderbyte/first_factorial.js"></script>
+<script src="/includes/coderbyte/longest_word.js"></script>
 <script src="/includes/coderbyte/capitalize_letters.js"></script>
 <script src="/includes/coderbyte/checknums.js"></script>
 <script src="/includes/coderbyte/array_addition.js"></script>

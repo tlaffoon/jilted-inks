@@ -7,9 +7,9 @@
             <li> 
                 <a href="#first-factorial">First Factorial</a>
             </li>
-            {{-- <li> 
+            <li> 
                 <a href="#longest-word">Longest Word</a>
-            </li> --}}
+            </li>
             {{-- <li> 
                 <a href="#letter-changes">Letter Changes</a>
             </li> --}}
