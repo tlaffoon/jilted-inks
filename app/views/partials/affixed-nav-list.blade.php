@@ -13,9 +13,9 @@
             <li> 
                 <a href="#letter-changes">Letter Changes</a>
             </li>
-            {{-- <li> 
+            <li> 
                 <a href="#simple-adding">Simple Adding</a>
-            </li> --}}
+            </li>
             <li> 
                 <a href="#letter-capitalize">Letter Capitalize</a>
             </li>
