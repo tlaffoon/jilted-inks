@@ -28,25 +28,25 @@
             <li> 
                 <a href="#time-convert">Time Convert</a>
             </li>
-            {{-- <li> 
+            <li> 
                 <a href="#alphabet-soup">Alphabet Soup</a>
             </li>
-            <li> 
+            {{-- <li> 
                 <a href="#ab-check">AB Check</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#vowel-count">Vowel Count</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#word-count">Word Count</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#ex-oh">Ex Oh</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#palindrome">Palindrome</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#arith-geo">Arith Geo</a>
             </li> --}}
             <li> 

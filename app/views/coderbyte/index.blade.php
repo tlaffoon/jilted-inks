@@ -101,6 +101,9 @@
         {{-- Time Convert --}}
         @include('coderbyte.time-convert')
 
+        {{-- Alphabet Soup --}}
+        @include('coderbyte.alphabet-soup')
+
         {{-- Array Addition --}}
         @include('coderbyte.array-addition')
 
@@ -129,8 +132,9 @@
 <script src="/includes/coderbyte/simple_adding.js"></script>
 <script src="/includes/coderbyte/capitalize_letters.js"></script>
 <script src="/includes/coderbyte/checknums.js"></script>
-<script src="/includes/coderbyte/array_addition.js"></script>
 <script src="/includes/coderbyte/time_convert.js"></script>
+<script src="/includes/coderbyte/alphabet_soup.js"></script>
+<script src="/includes/coderbyte/array_addition.js"></script>
 
 <script src="/includes/coderbyte/caesar_cipher.js"></script>
 
