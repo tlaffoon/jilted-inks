@@ -53,12 +53,7 @@ class HomeController extends \BaseController {
 	}
 
 	public function showCoderbyte() {
-
-		for ($i=1; $i <= 26 ; $i++) { 
-			$alphaIndices[] = $i;
-		}
-
-		return View::make('coderbyte')->with('alphaIndices', $alphaIndices);
+		return View::make('coderbyte.index');
 	}
 
 	public function sendEmail() {
