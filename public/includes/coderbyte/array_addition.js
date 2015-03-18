@@ -35,6 +35,8 @@ function ArrayAddition(numbers) {
     // Add total of all numbers in array to sums array.
     sums.push(total);
 
+    console.log(sums);
+
     // Determine if potential sums include largest number in array.
     if (sums.indexOf(largestNumber) == -1) {
         return false;
