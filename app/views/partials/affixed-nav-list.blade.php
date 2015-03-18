@@ -1,34 +1,34 @@
 <ul id="main-nav-list">
-    <li id="easy" class="nav-list-header">Easy
-        <ul class="main-nav-list-items">
+    <li id="simple" class="nav-list-header">Simple
+        <ul>
             <li> 
                 <a href="#first-reverse">First Reverse</a>
             </li>
             <li> 
                 <a href="#first-factorial">First Factorial</a>
             </li>
-            <li> 
+            {{-- <li> 
                 <a href="#longest-word">Longest Word</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#letter-changes">Letter Changes</a>
-            </li>
-            <li> 
+            </li> --}}
+            {{-- <li> 
                 <a href="#simple-adding">Simple Adding</a>
-            </li>
+            </li> --}}
             <li> 
                 <a href="#letter-capitalize">Letter Capitalize</a>
             </li>
-            <li> 
+            {{-- <li> 
                 <a href="#simple-symbols">Simple Symbols</a>
-            </li>
+            </li> --}}
             <li> 
-                <a href="#check-nums">Check Nums</a>
+                <a href="#check-numbers">Check Numbers</a>
             </li>
             <li> 
                 <a href="#time-convert">Time Convert</a>
             </li>
-            <li> 
+            {{-- <li> 
                 <a href="#alphabet-soup">Alphabet Soup</a>
             </li>
             <li> 
@@ -48,11 +48,11 @@
             </li>
             <li> 
                 <a href="#arith-geo">Arith Geo</a>
-            </li>
+            </li> --}}
             <li> 
                 <a href="#array-addition">Array Addition I</a>
             </li>
-            <li> 
+            {{-- <li> 
                 <a href="#letter-count">Letter Count I</a>
             </li>
             <li> 
@@ -90,13 +90,13 @@
             </li>
             <li> 
                 <a href="#off-line-minimum">Off Line Minimum</a>
-            </li>
+            </li> --}}
         </ul>
     </li>
     
-{{--     <li id="medium" class="nav-list-header">Medium
+    <li id="intermediate" class="nav-list-header">Intermediate
         <ul>
-            <li>Prime Time</li>
+{{--             <li>Prime Time</li>
             <li>Run Length</li>
             <li>Prime Mover</li>
             <li>Palindrome Two</li>
@@ -105,9 +105,11 @@
             <li>Arith Geo II</li>
             <li>Array Addition</li>
             <li>Binary Converter</li>
-            <li>Letter Count</li>
-            <li>Caesar Cipher</li>
-            <li>Simple Mode</li>
+            <li>Letter Count</li> --}}
+            <li>
+                <a href="#caesar-cipher">Caesar Cipher</a>
+            </li>
+{{--             <li>Simple Mode</li>
             <li>Consecutive</li>
             <li>Formatted Division</li>
             <li>Counting Minutes</li>
@@ -127,11 +129,11 @@
             <li>Overlapping Rectangles</li>
             <li>Look Say Sequence</li>
             <li>Distinct List</li>
-            <li>Number Encoding</li>
+            <li>Number Encoding</li> --}}
         </ul>
     </li>
 
-    <li id="hard" class="nav-list-header">Hard
+{{--     <li id="advanced" class="nav-list-header">Advanced
         <ul>
             <li>Optimal Assignments</li>
             <li>Transitivity Relations</li>

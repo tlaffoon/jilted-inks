@@ -3,6 +3,16 @@
 
         <div class="challenge-block img-rounded">
             
+            <a name="first-factorial" class="anchor-tag">
+                <i class="fa fa-link"></i>
+            </a>
+            
+            <span class="pull-right text-muted">
+                <a href="https://github.com/tlaffoon/coderbyte/blob/master/first_factorial.html">
+                    <i class="fa fa-github-square fa-2x"></i>
+                </a>
+            </span>
+
             <h4 class="indent underline">First Factorial</h4>
             
             <p> Using the JavaScript language, have the function FirstFactorial(num) take the num 

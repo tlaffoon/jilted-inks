@@ -2,7 +2,17 @@
     <div class="col-md-12">
 
         <div class="challenge-block img-rounded">
-            
+        
+            <a name="check-numbers" class="anchor-tag">
+                <i class="fa fa-link"></i>
+            </a>
+                
+            <span class="pull-right text-muted">
+                <a href="https://github.com/tlaffoon/coderbyte/blob/master/capitalize_letters.html">
+                    <i class="fa fa-github-square fa-2x"></i>
+                </a>
+            </span>
+
             <h4 class="indent underline">Check Numbers</h4>
             
             <p>

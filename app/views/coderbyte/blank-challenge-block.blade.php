@@ -2,7 +2,15 @@
     <div class="col-md-12">
 
         <div class="challenge-block img-rounded">
+
+            <a name="NAMEOFLINK" class="anchor-tag"></a>
             
+            <span class="pull-right text-muted">
+                <a href="https://github.com/tlaffoon/coderbyte/...">
+                    <i class="fa fa-github-square fa-2x"></i>
+                </a>
+            </span>
+
             <h4 class="indent underline">TITLE</h4>
             
             <p>

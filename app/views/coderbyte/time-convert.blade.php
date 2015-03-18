@@ -3,6 +3,16 @@
 
         <div class="challenge-block img-rounded">
             
+            <a name="time-convert" class="anchor-tag">
+                <i class="fa fa-link"></i>
+            </a>
+            
+            <span class="pull-right text-muted">
+                <a href="https://github.com/tlaffoon/coderbyte/blob/master/time_convert.html">
+                    <i class="fa fa-github-square fa-2x"></i>
+                </a>
+            </span>
+
             <h4 class="indent underline">Time Convert</h4>
             
             <p>

@@ -3,7 +3,17 @@
 
         <div class="challenge-block img-rounded">
             
-            <h4 class="indent underline">Capitalize Letters</h4>
+            <a name="letter-capitalize" class="anchor-tag">
+                <i class="fa fa-link"></i>
+            </a>
+            
+            <span class="pull-right text-muted">
+                <a href="https://github.com/tlaffoon/coderbyte/blob/master/capitalize_letters.html">
+                    <i class="fa fa-github-square fa-2x"></i>
+                </a>
+            </span>
+
+            <h4 class="indent underline title">Letter Capitalize</h4>
             
             <p>
                 Using the JavaScript language, have the function LetterCapitalize(str) 
@@ -25,7 +35,7 @@
 
             </div>
 
-            <div id="capitalizeLettersOutput" class="stringOutput"></div>
+            <div id="capitalizeLettersOutput" class="stringOutput text-muted"></div>
 
         </div>
 

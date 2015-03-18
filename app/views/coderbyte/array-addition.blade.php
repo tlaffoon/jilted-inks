@@ -3,6 +3,16 @@
 
         <div class="challenge-block img-rounded">
             
+            <a name="array-addition" class="anchor-tag">
+                <i class="fa fa-link"></i>
+            </a>
+            
+            <span class="pull-right text-muted">
+                <a href="https://github.com/tlaffoon/coderbyte/blob/master/array_addition.html">
+                    <i class="fa fa-github-square fa-2x"></i>
+                </a>
+            </span>
+
             <h4 class="indent underline">Array Addition</h4>
             
             <p>
@@ -14,14 +24,14 @@
             <p>
                 For example: if arr contains [4, 6, 23, 10, 1, 3] the output should 
                 return true because 4 + 6 + 10 + 3 = 23. The array will not be empty, 
-                will not contain all the same elements, and may contain negative numbers. 
+                will not contain the same elements, and may contain negative numbers. 
             </p>
 
             <div class="row">
 
                 <div class="col-md-11">
                     {{ Form::open() }}
-                    {{ Form::text('arrayAdditionInput', null, array('id' => 'arrayAdditionInput', 'class' => 'form-group form-control', 'placeholder' => 'Enter a few integers...')) }}
+                    {{ Form::text('arrayAdditionInput', null, array('id' => 'arrayAdditionInput', 'class' => 'form-group form-control', 'placeholder' => 'Enter a few integers separated by whitespace...')) }}
                 </div>
 
                 <div class="col-md-1">
