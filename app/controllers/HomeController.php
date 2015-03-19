@@ -52,6 +52,10 @@ class HomeController extends \BaseController {
 		return View::make('calendar')->with('calendar', $calendar);
 	}
 
+	public function showCoderbyte() {
+		return View::make('coderbyte.index');
+	}
+
 	public function sendEmail() {
 
 		// Get all the input and store it inside variable.
