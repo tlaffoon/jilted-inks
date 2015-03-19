@@ -43,7 +43,7 @@
     #main-nav-list {
         padding-top: 20px;
         position: fixed;
-        right: 80px;
+        right: 50px;
     }
 
     .nav-list-header {
