@@ -1,9 +1,9 @@
 <div class="row">
     <div class="col-md-12">
 
+        <a name="scope" class="anchor-tag"></a>
         <div class="curriculum-block img-rounded">
 
-            <a name="scope" class="anchor-tag"></a>
 
             <h4 class="indent underline">Understanding Scope</h4>
             
