@@ -7,18 +7,10 @@
         margin-bottom: 800px;
     }
 
-    .indent {
-        text-indent: 15px;
-    }
-
     .challenge-block {
         padding: 10px;
         border: solid #eee 1px;
         margin-bottom: 20px;
-    }
-
-    .underline {
-        text-decoration: underline;
     }
 
     .section-header {
@@ -43,7 +35,7 @@
     #main-nav-list {
         padding-top: 20px;
         position: fixed;
-        right: 80px;
+        right: 50px;
     }
 
     .nav-list-header {
@@ -52,14 +44,6 @@
 
     .main-nav-list-items {
         font-size: 14px;
-    }
-
-    .anchor-tag { 
-      display: block; 
-      content: " "; 
-      margin-top: -80px; 
-      height: 80px; 
-      visibility: hidden; 
     }
 
 </style>
