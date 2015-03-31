@@ -142,7 +142,7 @@
                     including Apache, MySQL, PHP, FTP, SSH and DNS;</li>
                 <li>Teaching customers “how to fish” while advising on technical issues;</li>
                 <li>Collaborating with fellow system administrators and support team members;</li>
-                <li>Providing Fanatical Support® in all interactions.</li>
+                <li>Providing Fanatical Support<sup>®</sup> in all interactions.</li>
             </ul>
         </div>
 
@@ -166,7 +166,7 @@
                 <li>Collaborating with fellow support team members and systems operations;</li>
                 <li>Training new support personnel;</li>
                 <li>Writing tools for support/operations;</li>
-                <li>Providing Fanatical Support® in all interactions.</li>
+                <li>Providing Fanatical Support<sup>®</sup> in all interactions.</li>
             </ul>
         </div>
 
@@ -189,7 +189,7 @@
                 <li>Debugging/troubleshooting/resolving generated alerts within 15 minute SLA;</li>
                 <li>Serving as the primary means of communication to customers;</li>
                 <li>Escalating issues which needed additional Rackspace support to resolve;</li>
-                <li>Providing Fanatical Support® in all interactions.</li>
+                <li>Providing Fanatical Support<sup>®</sup> in all interactions.</li>
             </ul>
         </div>
 
@@ -203,7 +203,7 @@
 
         <div class="col-md-10"> 
             <p class="text-muted pull-right">December 2008 - 3.2 GPA</p>
-            <h4>B.A. Psychology/Anthropology</h4>
+            <h4>Dual B.A. Psychology/Anthropology</h4>
 
             <p class="description">
                 <em>
