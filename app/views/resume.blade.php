@@ -42,7 +42,7 @@
         <div class="col-md-9 img-rounded dash-border">
             <h4>Introduction</h4>
             <p class="description"> My name is Thomas J. Laffoon - and I work in a startup here in downtown San Antonio 
-                called <a href="http://codeup.com/"><strong>Codeup</strong></a>.  We teach people how to build websites and web applications using 
+                called <a href="http://codeup.com/" target="_blank"><strong>Codeup</strong></a>.  We teach people how to build websites and web applications using 
                 some of the most common technologies out there.
             </p>
             <p class="description">
