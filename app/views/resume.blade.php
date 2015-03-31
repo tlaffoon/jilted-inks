@@ -203,7 +203,7 @@
 
         <div class="col-md-10"> 
             <p class="text-muted pull-right">December 2008 - 3.2 GPA</p>
-            <h4>Bachelor Of Arts in Psychology/Anthropology</h4>
+            <h4>B.A. Psychology/Anthropology</h4>
 
             <p class="description">
                 <em>
