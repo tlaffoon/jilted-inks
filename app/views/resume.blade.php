@@ -23,6 +23,7 @@
         margin-top: 20px;
     }
 </style>
+@stop
 
 
 @section('content')
