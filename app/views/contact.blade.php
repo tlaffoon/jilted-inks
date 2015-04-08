@@ -1,13 +1,22 @@
 @extends('layouts.awesome')
 
 @section('topscript')
+<style type="text/css">
+
+    #info-box {
+        font-size: 18px;
+    }
+
+</style>
 @stop
 
 @section('content')
 
 <div class="col-md-6 col-md-offset-3">
     <h3 class="page-header"> Send A Message! </h3>
-    <p>Please enter your contact information below:</p>
+    <p id="info-box" class="text-center">Please enter your contact information below.</p>
+
+    <hr>
 
         {{ Form::open(array('action' => 'HomeController@sendEmail')) }}
 
