@@ -92,17 +92,17 @@
         @include('coderbyte.array-addition')
 
 
-
     {{-- Intermediate --}}
     <h4 class="underline section-header">Intermediate</h4>
+
+        {{-- Prime Time --}}
+        @include('coderbyte.prime-time')
 
         {{-- Caesar Cipher --}}
         @include('coderbyte.caesar-cipher')
 
 
     {{-- Advanced --}}
-
-
 
 @stop
 
@@ -119,6 +119,7 @@
 <script src="/includes/coderbyte/time_convert.js"></script>
 <script src="/includes/coderbyte/alphabet_soup.js"></script>
 <script src="/includes/coderbyte/array_addition.js"></script>
+<script src="/includes/coderbyte/prime_time.js"></script>
 
 <script src="/includes/coderbyte/caesar_cipher.js"></script>
 
