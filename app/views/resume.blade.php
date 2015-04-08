@@ -22,7 +22,13 @@
     .job-box {
         margin-top: 20px;
     }
+
+    #github-link {
+        position: relative;
+        top: 10px;
+    }
 </style>
+@stop
 
 
 @section('content')
@@ -32,8 +38,10 @@
     <!-- Header / Bio -->
     <div class="row box img-rounded">
         <div class="col-md-12"> 
+            <a id="github-link" href="http://github.com/tlaffoon/" class="pull-right"><i class="fa fa-github-square fa-2x"></i></a>
             <h2 class="page-header">Thomas J. Laffoon</h2>
         </div>
+
 
         <div class="col-md-3">
             <img id="headshot" src="/includes/img/headshot.png" class="img-responsive img-rounded">
@@ -42,7 +50,7 @@
         <div class="col-md-9 img-rounded dash-border">
             <h4>Introduction</h4>
             <p class="description"> My name is Thomas J. Laffoon - and I work in a startup here in downtown San Antonio 
-                called <a href="http://codeup.com/"><strong>Codeup</strong></a>.  We teach people how to build websites and web applications using 
+                called <a href="http://codeup.com/" target="_blank"><strong>Codeup</strong></a>.  We teach people how to build websites and web applications using 
                 some of the most common technologies out there.
             </p>
             <p class="description">
@@ -142,7 +150,7 @@
                     including Apache, MySQL, PHP, FTP, SSH and DNS;</li>
                 <li>Teaching customers “how to fish” while advising on technical issues;</li>
                 <li>Collaborating with fellow system administrators and support team members;</li>
-                <li>Providing Fanatical Support® in all interactions.</li>
+                <li>Providing Fanatical Support<sup>®</sup> in all interactions.</li>
             </ul>
         </div>
 
@@ -166,7 +174,7 @@
                 <li>Collaborating with fellow support team members and systems operations;</li>
                 <li>Training new support personnel;</li>
                 <li>Writing tools for support/operations;</li>
-                <li>Providing Fanatical Support® in all interactions.</li>
+                <li>Providing Fanatical Support<sup>®</sup> in all interactions.</li>
             </ul>
         </div>
 
@@ -189,7 +197,7 @@
                 <li>Debugging/troubleshooting/resolving generated alerts within 15 minute SLA;</li>
                 <li>Serving as the primary means of communication to customers;</li>
                 <li>Escalating issues which needed additional Rackspace support to resolve;</li>
-                <li>Providing Fanatical Support® in all interactions.</li>
+                <li>Providing Fanatical Support<sup>®</sup> in all interactions.</li>
             </ul>
         </div>
 
@@ -203,7 +211,7 @@
 
         <div class="col-md-10"> 
             <p class="text-muted pull-right">December 2008 - 3.2 GPA</p>
-            <h4>Bachelor Of Arts in Psychology/Anthropology</h4>
+            <h4>Dual B.A. Psychology/Anthropology</h4>
 
             <p class="description">
                 <em>

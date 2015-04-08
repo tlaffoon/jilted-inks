@@ -13,6 +13,9 @@
 Route::get('/', 'HomeController@showHome');
 
 Route::get('/coderbyte', 'HomeController@showCoderbyte');
+Route::get('/curriculum', function() {
+    return View::make('curriculum.index');
+});
 
 Route::get('/sitemap', 'PostsController@showSitemap');
 
