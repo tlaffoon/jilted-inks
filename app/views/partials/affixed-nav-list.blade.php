@@ -46,9 +46,9 @@
             {{-- <li> 
                 <a href="#palindrome">Palindrome</a>
             </li> --}}
-            {{-- <li> 
+            <li>
                 <a href="#arith-geo">Arith Geo</a>
-            </li> --}}
+            </li>
             <li> 
                 <a href="#array-addition">Array Addition I</a>
             </li>
@@ -96,8 +96,10 @@
     
     <li id="intermediate" class="nav-list-header">Intermediate
         <ul>
-{{--             <li>Prime Time</li>
-            <li>Run Length</li>
+            <li>
+                <a href="#prime-time">Prime Time</a>
+            </li>
+            {{--<li>Run Length</li>
             <li>Prime Mover</li>
             <li>Palindrome Two</li>
             <li>Division</li>
