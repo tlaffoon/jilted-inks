@@ -22,6 +22,11 @@
     .job-box {
         margin-top: 20px;
     }
+
+    #github-link {
+        position: relative;
+        top: 10px;
+    }
 </style>
 @stop
 
@@ -33,8 +38,10 @@
     <!-- Header / Bio -->
     <div class="row box img-rounded">
         <div class="col-md-12"> 
+            <a id="github-link" href="http://github.com/tlaffoon/" class="pull-right"><i class="fa fa-github-square fa-2x"></i></a>
             <h2 class="page-header">Thomas J. Laffoon</h2>
         </div>
+
 
         <div class="col-md-3">
             <img id="headshot" src="/includes/img/headshot.png" class="img-responsive img-rounded">
